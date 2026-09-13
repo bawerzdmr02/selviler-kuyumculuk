@@ -100,23 +100,23 @@
 
 ## 4. Statik Sayfa İçerikleri
 
-- [ ] **Ana Sayfa:** Hero bölümü (tam ekran görsel/video + slogan + CTA), öne çıkan koleksiyon kartları (statik veri, `src/data/products.json`'dan), marka hikayesi kısa özeti, Instagram/sosyal medya besleme bloğu, iletişim CTA şeridi
-- [ ] **Hakkımızda sayfası:** Marka hikayesi, ustalık/güven vurgusu, mağaza fotoğrafları galerisi
-- [ ] **Koleksiyonlar/Ürünler (statik galeri):** Kategori bazlı ızgara (grid), ürün detay olmadan sadece görsel + isim + kısa açıklama (henüz fiyat/stok yok — bu Faz 2'de dinamikleşecek)
-- [ ] **İletişim sayfası:** Google Haritalar embed (iframe), adres, telefon (tıkla-ara linki), WhatsApp Business linki, çalışma saatleri
-- [ ] **İletişim formu:** Backend henüz yok — 3. parti bir form servisi kullan (ör. Web3Forms veya Formspree) ya da basit `mailto:` linki; Faz 2'de kendi backend'imize taşınacak şekilde not düş
-- [ ] Header/Footer bileşenlerini tüm sayfalarda ortak `layout.tsx` üzerinden kur
-- [ ] 404 sayfası (`app/not-found.tsx`) özel tasarımla oluştur
+- [x] **Ana Sayfa:** Hero bölümü (tam ekran görsel/video + slogan + CTA), öne çıkan koleksiyon kartları (statik veri, `src/data/products.json`'dan), marka hikayesi kısa özeti, Instagram/sosyal medya besleme bloğu, iletişim CTA şeridi
+- [x] **Hakkımızda sayfası:** Marka hikayesi, ustalık/güven vurgusu, mağaza fotoğrafları galerisi
+- [x] **Koleksiyonlar/Ürünler (statik galeri):** Kategori bazlı ızgara (grid), ürün detay olmadan sadece görsel + isim + kısa açıklama (henüz fiyat/stok yok — bu Faz 2'de dinamikleşecek)
+- [x] **İletişim sayfası:** Google Haritalar embed (iframe), adres, telefon (tıkla-ara linki), WhatsApp Business linki, çalışma saatleri
+- [x] **İletişim formu:** Backend henüz yok — 3. parti bir form servisi kullan (ör. Web3Forms veya Formspree) ya da basit `mailto:` linki; Faz 2'de kendi backend'imize taşınacak şekilde not düş
+- [x] Header/Footer bileşenlerini tüm sayfalarda ortak `layout.tsx` üzerinden kur
+- [x] 404 sayfası (`app/not-found.tsx`) özel tasarımla oluştur
 
 ## 5. SEO, Performans ve Yasal Sayfalar
 
-- [ ] Her sayfa için Next.js `generateMetadata` API'si ile title/description
-- [ ] Open Graph ve Twitter Card meta etiketleri (paylaşım önizlemesi için görsel dahil)
-- [ ] `app/sitemap.ts` ve `app/robots.ts` ile otomatik sitemap/robots üretimi
-- [ ] JSON-LD structured data ekle (schema.org `JewelryStore` / `LocalBusiness` tipi — adres, telefon, çalışma saatleri, konum)
-- [ ] `next/image` ile tüm görselleri optimize et (WebP/AVIF, lazy loading, doğru `sizes`)
-- [ ] Lighthouse denetimi çalıştır (Performance/SEO/Accessibility/Best Practices ≥ 90 hedefle)
-- [ ] **Gizlilik Politikası** ve **KVKK Aydınlatma Metni** sayfalarını şimdiden ekle (yasal zorunluluk — iletişim formu veri topladığı için Faz 1'de bile gerekli)
+- [x] Her sayfa için Next.js `generateMetadata` API'si ile title/description
+- [x] Open Graph ve Twitter Card meta etiketleri (paylaşım önizlemesi için görsel dahil)
+- [x] `app/sitemap.ts` ve `app/robots.ts` ile otomatik sitemap/robots üretimi
+- [x] JSON-LD structured data ekle (schema.org `JewelryStore` / `LocalBusiness` tipi — adres, telefon, çalışma saatleri, konum)
+- [x] `next/image` ile tüm görselleri optimize et (WebP/AVIF, lazy loading, doğru `sizes`)
+- [x] Lighthouse denetimi çalıştır (Performance/SEO/Accessibility/Best Practices ≥ 90 hedefle)
+- [x] **Gizlilik Politikası** ve **KVKK Aydınlatma Metni** sayfalarını şimdiden ekle (yasal zorunluluk — iletişim formu veri topladığı için Faz 1'de bile gerekli)
 - [ ] Google Search Console hesabı aç, domain doğrulaması yap (DNS TXT kaydı ile), sitemap gönder
 
 ## 6. Google İşletme Profili

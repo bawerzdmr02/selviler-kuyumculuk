@@ -1,4 +1,5 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import Link from "next/link";
+import type { ComponentProps, ReactNode } from "react";
 import {
   ButtonOrnament,
   buttonClasses,
@@ -7,30 +8,24 @@ import {
 type ButtonVariant = "primary" | "outline" | "ghost";
 type ButtonSize = "sm" | "md" | "lg";
 
-export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonLinkProps = Omit<ComponentProps<typeof Link>, "className"> & {
   variant?: ButtonVariant;
   size?: ButtonSize;
+  className?: string;
   children: ReactNode;
 };
 
-export function Button({
+export function ButtonLink({
   variant = "primary",
   size = "md",
   className = "",
   children,
-  type = "button",
-  disabled,
   ...props
-}: ButtonProps) {
+}: ButtonLinkProps) {
   return (
-    <button
-      type={type}
-      disabled={disabled}
-      className={buttonClasses(variant, size, className)}
-      {...props}
-    >
+    <Link className={buttonClasses(variant, size, className)} {...props}>
       <ButtonOrnament />
       <span className="relative z-10">{children}</span>
-    </button>
+    </Link>
   );
 }

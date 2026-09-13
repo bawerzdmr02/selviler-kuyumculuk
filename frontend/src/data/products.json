@@ -1,0 +1,102 @@
+{
+  "categories": [
+    {
+      "id": "yuzuk",
+      "name": "Yüzükler",
+      "slug": "yuzukler",
+      "description": "Zarafet ve incelikle işlenmiş altın yüzükler."
+    },
+    {
+      "id": "kolye",
+      "name": "Kolyeler",
+      "slug": "kolyeler",
+      "description": "Işıltılı taşlarla tamamlanan kolye koleksiyonu."
+    },
+    {
+      "id": "kupe",
+      "name": "Küpeler",
+      "slug": "kupeler",
+      "description": "Günlük şıklıktan özel gecelere uzanan küpe seçkisi."
+    },
+    {
+      "id": "bilezik",
+      "name": "Bilezikler",
+      "slug": "bilezikler",
+      "description": "Klasik ve çağdaş çizgilerde bilezik modelleri."
+    }
+  ],
+  "products": [
+    {
+      "id": "sk-001",
+      "name": "Selvi Alyans",
+      "slug": "selvi-alyans",
+      "categoryId": "yuzuk",
+      "featured": true,
+      "shortDescription": "İnce işçilikle hazırlanmış 14 ayar altın alyans.",
+      "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-002",
+      "name": "Nilüfer Tektaş",
+      "slug": "nilufer-tektas",
+      "categoryId": "yuzuk",
+      "featured": true,
+      "shortDescription": "Zarif tektaş yüzük — ışıkta parlayan bir vaat.",
+      "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-003",
+      "name": "Zeytin Dalı Kolye",
+      "slug": "zeytin-dali-kolye",
+      "categoryId": "kolye",
+      "featured": true,
+      "shortDescription": "Doğadan ilham alan altın zeytin dalı motifi.",
+      "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-004",
+      "name": "Ayışığı İnci Kolye",
+      "slug": "ayisigi-inci-kolye",
+      "categoryId": "kolye",
+      "featured": false,
+      "shortDescription": "Klasik inci ve altın zincirin sakin ışıltısı.",
+      "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-005",
+      "name": "Işık Damlası Küpe",
+      "slug": "isik-damlasi-kupe",
+      "categoryId": "kupe",
+      "featured": true,
+      "shortDescription": "Sarkaç formunda ince altın küpeler.",
+      "image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-006",
+      "name": "Yıldız Küpe",
+      "slug": "yildiz-kupe",
+      "categoryId": "kupe",
+      "featured": false,
+      "shortDescription": "Minimal yıldız detaylı günlük küpe çifti.",
+      "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-007",
+      "name": "Osmanlı Bilezik",
+      "slug": "osmanli-bilezik",
+      "categoryId": "bilezik",
+      "featured": true,
+      "shortDescription": "Geleneksel motiflerle çağdaş bir bilezik yorumu.",
+      "image": "https://images.unsplash.com/photo-1611955167811-4711904fff06?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-008",
+      "name": "İnce Zincir Bilezik",
+      "slug": "ince-zincir-bilezik",
+      "categoryId": "bilezik",
+      "featured": false,
+      "shortDescription": "Katmanlanabilir ince altın zincir bilezik.",
+      "image": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1200&q=80"
+    }
+  ]
+}

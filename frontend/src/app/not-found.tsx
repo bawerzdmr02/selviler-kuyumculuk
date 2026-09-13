@@ -1,0 +1,27 @@
+import { ButtonLink } from "@/components/ui/ButtonLink";
+import { GoldLine } from "@/components/ui/GoldLine";
+import { siteConfig } from "@/lib/site";
+
+export default function NotFound() {
+  return (
+    <div className="flex min-h-[70vh] flex-col items-center justify-center bg-noir px-4 py-24 text-center">
+      <p className="font-serif text-7xl tracking-[0.2em] text-gold sm:text-8xl">
+        404
+      </p>
+      <GoldLine className="my-8 max-w-[8rem]" />
+      <h1 className="font-serif text-2xl text-ivory sm:text-3xl">
+        Sayfa bulunamadı
+      </h1>
+      <p className="mt-4 max-w-md text-sm leading-relaxed text-ivory/65">
+        Aradığınız sayfa taşınmış veya hiç var olmamış olabilir.{" "}
+        {siteConfig.name} vitrinine geri dönebilirsiniz.
+      </p>
+      <div className="mt-10 flex flex-wrap justify-center gap-3">
+        <ButtonLink href="/">Ana Sayfa</ButtonLink>
+        <ButtonLink href="/koleksiyonlar" variant="outline">
+          Koleksiyonlar
+        </ButtonLink>
+      </div>
+    </div>
+  );
+}
