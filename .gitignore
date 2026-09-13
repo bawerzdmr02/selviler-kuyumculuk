@@ -36,3 +36,6 @@ coverage/
 
 # Misc
 *.pem
+
+# Runtime logs (PM2)
+logs/

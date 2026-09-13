@@ -186,7 +186,7 @@
   npm install -g pm2
   ```
 - [ ] Projeyi sunucuya çek (`git clone` deploy kullanıcısı ile), `npm install`, `npm run build`
-- [ ] `ecosystem.config.js` dosyasını oluştur (uygulama adı, script: `npm start`, env değişkenleri, `instances`, `exec_mode: cluster` opsiyonu)
+- [x] `ecosystem.config.js` dosyasını oluştur (uygulama adı, script: `npm start`, env değişkenleri, `instances`, `exec_mode: cluster` opsiyonu)
 - [ ] `pm2 start ecosystem.config.js` ile başlat
 - [ ] `pm2 startup` komutunu çalıştır ve çıktısındaki komutu uygula (sunucu yeniden başlasa bile PM2'nin otomatik ayağa kalkması için)
 - [ ] `pm2 save` ile mevcut process listesini kaydet
@@ -194,7 +194,7 @@
 ## 10. Nginx Reverse Proxy Kurulumu
 
 - [ ] Nginx kur: `apt install nginx -y`
-- [ ] `/etc/nginx/sites-available/selviler` dosyasını oluştur, reverse proxy tanımla:
+- [x] `/etc/nginx/sites-available/selviler` dosyasını oluştur, reverse proxy tanımla:
   ```nginx
   server {
       listen 80;
@@ -213,8 +213,8 @@
       }
   }
   ```
-- [ ] Gzip sıkıştırmasını `/etc/nginx/nginx.conf` içinde aktif et
-- [ ] `client_max_body_size` değerini ileride görsel yüklemeleri düşünerek yükselt (ör. `20M`)
+- [x] Gzip sıkıştırmasını `/etc/nginx/nginx.conf` içinde aktif et
+- [x] `client_max_body_size` değerini ileride görsel yüklemeleri düşünerek yükselt (ör. `20M`)
 - [ ] Sembolik link oluştur: `ln -s /etc/nginx/sites-available/selviler /etc/nginx/sites-enabled/`
 - [ ] Varsayılan Nginx sitesini devre dışı bırak: `rm /etc/nginx/sites-enabled/default`
 - [ ] Konfigürasyonu test et: `nginx -t`, sorun yoksa: `systemctl reload nginx`
@@ -410,8 +410,8 @@
 
 ## 26. Deployment Güncelleme Süreci
 
-- [ ] Basit bir deploy script'i yaz (`deploy.sh`): `git pull`, `npm install`, `npm run build`, `npx prisma migrate deploy`, `pm2 reload ecosystem.config.js`
-- [ ] `pm2 reload` kullanarak **zero-downtime** güncelleme yapıldığından emin ol (`pm2 restart` yerine)
+- [x] Basit bir deploy script'i yaz (`deploy.sh`): `git pull`, `npm install`, `npm run build`, `npx prisma migrate deploy`, `pm2 reload ecosystem.config.js`
+- [x] `pm2 reload` kullanarak **zero-downtime** güncelleme yapıldığından emin ol (`pm2 restart` yerine)
 - [ ] Prod ortamda migration'ların `migrate dev` değil `migrate deploy` ile uygulandığını doğrula
 - [ ] Opsiyonel: GitHub Actions ile basit bir CI/CD pipeline'ı kur (push → build → sunucuya SSH ile deploy)
 
