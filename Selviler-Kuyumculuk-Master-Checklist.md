@@ -62,9 +62,9 @@
 
 ## 1. Proje ve Ortam Hazırlığı
 
-- [ ] VS Code + Node.js LTS (nvm üzerinden) yerel makineye kurulumu
-- [ ] `nvm install --lts && nvm use --lts` ile Node sürümünü sabitle
-- [ ] GitHub/GitLab üzerinde **private** repo oluştur: `selviler-kuyumculuk`
+- [x] VS Code + Node.js LTS (nvm üzerinden) yerel makineye kurulumu
+- [x] `nvm install --lts && nvm use --lts` ile Node sürümünü sabitle
+- [x] GitHub/GitLab üzerinde **private** repo oluştur: `selviler-kuyumculuk`
 - [x] Repo içinde `frontend/` ve (ileride kullanılacak) `backend/` klasör ayrımını şimdiden planla (monorepo yaklaşımı)
 - [x] `.gitignore` dosyasını oluştur (`node_modules`, `.env`, `.next`, `.DS_Store`)
 - [x] README.md içine proje özeti, kurulum komutları ve branch stratejisini yaz
@@ -86,17 +86,17 @@
 
 ## 3. Tasarım Sistemi (Lüks Tema)
 
-- [ ] Marka renk paletini `tailwind.config.ts` içine `extend.colors` olarak tanımla:
+- [x] Marka renk paletini `tailwind.config.ts` içine `extend.colors` olarak tanımla:
   - `noir: "#0A0A0A"` (ana siyah)
   - `charcoal: "#1A1A1A"` (koyu gri panel arka planı)
   - `gold: "#C9A24B"` / `gold-light: "#E5C97B"` (altın sarısı vurgu — gradient için iki ton öner)
   - `ivory: "#F5F1E8"` (açık metin/arka plan tonu)
-- [ ] Tipografi seç: Başlıklar için bir serif (ör. Playfair Display), gövde metni için sade bir sans-serif (ör. Inter) — `next/font/google` ile self-host et (performans + gizlilik)
-- [ ] Buton, kart, badge, divider gibi tekrar eden UI parçaları için `src/components/ui/` altında yeniden kullanılabilir bileşenler oluştur
-- [ ] Altın renkli ince çizgiler / geometrik motiflerle "kuyumcu" hissi veren dekoratif SVG detaylar hazırla
-- [ ] Karanlık tema tutarlılığı için kontrast kontrolü yap (WCAG AA — metin okunabilirliği)
+- [x] Tipografi seç: Başlıklar için bir serif (ör. Playfair Display), gövde metni için sade bir sans-serif (ör. Inter) — `next/font/google` ile self-host et (performans + gizlilik)
+- [x] Buton, kart, badge, divider gibi tekrar eden UI parçaları için `src/components/ui/` altında yeniden kullanılabilir bileşenler oluştur
+- [x] Altın renkli ince çizgiler / geometrik motiflerle "kuyumcu" hissi veren dekoratif SVG detaylar hazırla
+- [x] Karanlık tema tutarlılığı için kontrast kontrolü yap (WCAG AA — metin okunabilirliği)
 - [ ] Logo varlıklarını (SVG, PNG — açık ve koyu zemin versiyonları, favicon, apple-touch-icon) `public/` altına yerleştir
-- [ ] Mobil öncelikli (mobile-first) responsive breakpoint stratejisi belirle (sm/md/lg/xl)
+- [x] Mobil öncelikli (mobile-first) responsive breakpoint stratejisi belirle (sm/md/lg/xl)
 
 ## 4. Statik Sayfa İçerikleri
 
