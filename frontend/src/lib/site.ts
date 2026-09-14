@@ -8,31 +8,30 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
     "https://selvilerkuyumculuk.com",
   ogImage:
-    "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1758995115445-c91788f5aa24?auto=format&fit=crop&w=1200&q=80",
   locale: "tr_TR",
   contact: {
-    address: "Kuyumcular Çarşısı No: — , Türkiye",
-    streetAddress: "Kuyumcular Çarşısı No: —",
-    addressLocality: "İstanbul",
+    address:
+      "Uğur Mumcu Mah. Muhsin Yazıcıoğlu Cad. No:11/A SULTANGAZİ/İSTANBUL",
+    streetAddress: "Uğur Mumcu Mah. Muhsin Yazıcıoğlu Cad. No:11/A",
+    addressLocality: "Sultangazi",
     addressRegion: "İstanbul",
-    postalCode: "34000",
+    postalCode: "34270",
     addressCountry: "TR",
-    phone: "+90 555 000 00 00",
-    phoneHref: "tel:+905550000000",
+    phone: "0538 064 37 71",
+    phoneHref: "tel:+905380643771",
     email: "info@selvilerkuyumculuk.com",
-    whatsapp: "https://wa.me/905550000000",
+    whatsapp: "https://wa.me/905380643771",
     mapEmbedUrl:
-      "https://maps.google.com/maps?q=Istanbul&t=&z=15&ie=UTF8&iwloc=&output=embed",
-    /** Taslak koordinat — gerçek mağaza pin'i ile güncellenecek */
+      "https://maps.google.com/maps?q=U%C4%9Fur%20Mumcu%20Mah.%20Muhsin%20Yaz%C4%B1c%C4%B1o%C4%9Flu%20Cad.%20No:11/A%20Sultangazi%20%C4%B0stanbul&t=&z=16&ie=UTF8&iwloc=&output=embed",
     geo: {
-      latitude: 41.0082,
-      longitude: 28.9784,
+      latitude: 41.1064,
+      longitude: 28.8681,
     },
     hours: [
       { days: "Pazartesi – Cumartesi", time: "10:00 – 19:00" },
       { days: "Pazar", time: "Kapalı" },
     ],
-    /** schema.org OpeningHoursSpecification */
     openingHours: [
       {
         dayOfWeek: [

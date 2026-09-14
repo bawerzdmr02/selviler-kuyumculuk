@@ -30,39 +30,39 @@ const GALLERY = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-noir">
+    <div className="bg-ivory">
       <section className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:px-8">
         <p className="mb-3 text-xs uppercase tracking-[0.28em] text-gold">
           Hakkımızda
         </p>
-        <h1 className="font-serif text-4xl text-ivory sm:text-5xl">
+        <h1 className="font-serif text-4xl text-noir sm:text-5xl">
           Marka hikayemiz
         </h1>
         <div className="mx-auto mt-6 max-w-xs">
           <Divider />
         </div>
-        <p className="mt-8 text-sm leading-relaxed text-ivory/75 sm:text-base">
+        <p className="mt-8 text-sm leading-relaxed text-charcoal/75 sm:text-base">
           Selviler Kuyumculuk, zamansız zarafeti günlük hayatın özel anlarına
           taşımak için kuruldu. Her tasarımda dengeyi, saflığı ve uzun ömürlü
           işçiliği ön planda tutuyoruz.
         </p>
       </section>
 
-      <section className="border-y border-gold/15 bg-charcoal px-4 py-16 sm:px-6 lg:px-8">
+      <section className="border-y border-gold/20 bg-cream px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:gap-16">
           <div>
-            <h2 className="font-serif text-2xl text-ivory sm:text-3xl">
+            <h2 className="font-serif text-2xl text-noir sm:text-3xl">
               Ustalık
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-ivory/70 sm:text-base">
+            <p className="mt-4 text-sm leading-relaxed text-charcoal/70 sm:text-base">
               Atölyemizde geleneksel kuyumculuk teknikleri, çağdaş tasarım dili
               ile buluşur. Her parça, seçilmiş hammaddeler ve titiz kontrol
               süreçleriyle tamamlanır.
             </p>
           </div>
           <div>
-            <h2 className="font-serif text-2xl text-ivory sm:text-3xl">Güven</h2>
-            <p className="mt-4 text-sm leading-relaxed text-ivory/70 sm:text-base">
+            <h2 className="font-serif text-2xl text-noir sm:text-3xl">Güven</h2>
+            <p className="mt-4 text-sm leading-relaxed text-charcoal/70 sm:text-base">
               Şeffaf iletişim, doğru ayar bilgisi ve satış sonrası destek —
               Selviler deneyiminin temelidir. Müşterilerimizle kurduğumuz ilişki
               tek bir satıştan fazlasıdır.
@@ -72,14 +72,14 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-        <h2 className="mb-10 text-center font-serif text-3xl text-ivory">
+        <h2 className="mb-10 text-center font-serif text-3xl text-noir">
           Mağazamızdan kareler
         </h2>
         <ul className="grid gap-4 sm:grid-cols-3">
           {GALLERY.map((item) => (
             <li
               key={item.src}
-              className="relative aspect-[4/5] overflow-hidden border border-gold/20"
+              className="relative aspect-[4/5] overflow-hidden border border-gold/25 bg-surface shadow-sm"
             >
               <Image
                 src={item.src}

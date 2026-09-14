@@ -48,7 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="tr"
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-noir font-sans text-ivory">
+      <body className="flex min-h-full flex-col bg-ivory font-sans text-charcoal">
         <JsonLd />
         <Header />
         <main className="flex-1">{children}</main>

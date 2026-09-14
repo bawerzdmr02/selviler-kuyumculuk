@@ -14,27 +14,27 @@ export function generateMetadata(): Metadata {
 
 export default function KvkkPage() {
   return (
-    <article className="bg-noir px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+    <article className="bg-ivory px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <header className="mb-12 text-center">
           <p className="mb-3 text-xs uppercase tracking-[0.28em] text-gold">
             Yasal
           </p>
-          <h1 className="font-serif text-4xl text-ivory sm:text-5xl">
+          <h1 className="font-serif text-4xl text-noir sm:text-5xl">
             KVKK Aydınlatma Metni
           </h1>
           <div className="mx-auto mt-6 max-w-xs">
             <Divider />
           </div>
-          <p className="mt-4 text-xs text-ivory/45">
+          <p className="mt-4 text-xs text-charcoal/45">
             6698 sayılı Kanun uyarınca taslak aydınlatma metni — yayına
             alınmadan önce hukuki gözden geçirme yapılmalıdır.
           </p>
         </header>
 
-        <div className="space-y-8 text-sm leading-relaxed text-ivory/75 sm:text-base">
+        <div className="space-y-8 text-sm leading-relaxed text-charcoal/75 sm:text-base">
           <section className="space-y-3">
-            <h2 className="font-serif text-2xl text-ivory">
+            <h2 className="font-serif text-2xl text-noir">
               1. Veri sorumlusu
             </h2>
             <p>
@@ -45,7 +45,7 @@ export default function KvkkPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-serif text-2xl text-ivory">
+            <h2 className="font-serif text-2xl text-noir">
               2. İşlenen kişisel veriler
             </h2>
             <p>
@@ -56,7 +56,7 @@ export default function KvkkPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-serif text-2xl text-ivory">
+            <h2 className="font-serif text-2xl text-noir">
               3. İşleme amaçları ve hukuki sebepler
             </h2>
             <p>
@@ -69,7 +69,7 @@ export default function KvkkPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-serif text-2xl text-ivory">
+            <h2 className="font-serif text-2xl text-noir">
               4. Aktarım
             </h2>
             <p>
@@ -82,7 +82,7 @@ export default function KvkkPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-serif text-2xl text-ivory">
+            <h2 className="font-serif text-2xl text-noir">
               5. Toplama yöntemi
             </h2>
             <p>
@@ -93,7 +93,7 @@ export default function KvkkPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-serif text-2xl text-ivory">
+            <h2 className="font-serif text-2xl text-noir">
               6. İlgili kişi hakları
             </h2>
             <p>
@@ -108,7 +108,7 @@ export default function KvkkPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-serif text-2xl text-ivory">7. Başvuru</h2>
+            <h2 className="font-serif text-2xl text-noir">7. Başvuru</h2>
             <p>
               Haklarınıza ilişkin taleplerinizi{" "}
               <a

@@ -34,11 +34,11 @@ export function ContactForm() {
   }
 
   const fieldClass =
-    "w-full border border-gold/30 bg-noir px-4 py-3 text-sm text-ivory placeholder:text-ivory/40 focus:border-gold-light focus:outline-none";
+    "w-full border border-gold/35 bg-cream px-4 py-3 text-sm text-noir placeholder:text-charcoal/40 focus:border-gold focus:outline-none";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-      <p className="text-xs leading-relaxed text-ivory/50">
+      <p className="text-xs leading-relaxed text-charcoal/50">
         Form geçici olarak e-posta istemcinizi açar (mailto). Faz 2&apos;de kendi
         backend&apos;imize taşınacaktır.
       </p>
@@ -107,7 +107,7 @@ export function ContactForm() {
       </Button>
 
       {status === "sent" && (
-        <p className="text-sm text-gold-light" role="status">
+        <p className="text-sm text-gold" role="status">
           E-posta uygulamanız açıldıysa mesajınızı gönderebilirsiniz.
         </p>
       )}

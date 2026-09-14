@@ -14,6 +14,8 @@ const config: Config = {
         gold: "#C9A24B",
         "gold-light": "#E5C97B",
         ivory: "#F5F1E8",
+        cream: "#FAFAF8",
+        surface: "#FFFFFF",
       },
       fontFamily: {
         serif: ["var(--font-playfair)", "Georgia", "serif"],

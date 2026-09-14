@@ -2,13 +2,16 @@
 @config "../../tailwind.config.ts";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #f5f1e8;
+  /* Light Luxury — aydınlık zemin, koyu metin, altın vurgu */
+  --background: #f5f1e8;
+  --foreground: #1a1a1a;
   --noir: #0a0a0a;
   --charcoal: #1a1a1a;
   --gold: #c9a24b;
   --gold-light: #e5c97b;
   --ivory: #f5f1e8;
+  --cream: #fafaf8;
+  --surface: #ffffff;
 }
 
 @theme inline {
@@ -19,6 +22,8 @@
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-ivory: var(--ivory);
+  --color-cream: var(--cream);
+  --color-surface: var(--surface);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
 }
@@ -36,5 +41,5 @@ h4,
 h5,
 h6 {
   font-family: var(--font-playfair), Georgia, serif;
-  color: var(--ivory);
+  color: var(--noir);
 }

@@ -24,12 +24,12 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gold/20 bg-noir/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-gold/25 bg-ivory/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
         <Link
           href="/"
           onClick={closeMenu}
-          className="font-serif text-lg tracking-[0.12em] text-ivory transition-colors hover:text-gold-light sm:text-xl"
+          className="font-serif text-lg tracking-[0.12em] text-noir transition-colors hover:text-gold sm:text-xl"
         >
           {siteConfig.name}
         </Link>
@@ -51,8 +51,8 @@ export function Header() {
                 className={cn(
                   "text-xs uppercase tracking-[0.22em] transition-colors",
                   active
-                    ? "text-gold-light"
-                    : "text-ivory/75 hover:text-gold-light"
+                    ? "text-gold"
+                    : "text-charcoal/70 hover:text-gold"
                 )}
               >
                 {item.label}
@@ -63,7 +63,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center border border-gold/40 p-2 text-ivory md:hidden"
+          className="inline-flex items-center justify-center border border-gold/50 p-2 text-noir md:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
@@ -73,12 +73,12 @@ export function Header() {
         </button>
       </div>
 
-      <GoldLine className="opacity-60" />
+      <GoldLine className="opacity-70" />
 
       {open && (
         <div
           id="mobile-nav"
-          className="border-t border-gold/20 bg-noir md:hidden"
+          className="border-t border-gold/20 bg-ivory md:hidden"
         >
           <nav
             aria-label="Mobil menü"
@@ -98,8 +98,8 @@ export function Header() {
                   className={cn(
                     "border border-transparent px-3 py-3 text-sm uppercase tracking-[0.2em]",
                     active
-                      ? "border-gold/30 text-gold-light"
-                      : "text-ivory/80"
+                      ? "border-gold/40 text-gold"
+                      : "text-charcoal/80"
                   )}
                 >
                   {item.label}

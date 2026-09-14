@@ -8,9 +8,9 @@ export type BadgeProps = HTMLAttributes<HTMLSpanElement> & {
 };
 
 const variantClasses: Record<BadgeVariant, string> = {
-  gold: "border-gold/60 bg-gold/15 text-gold-light",
-  outline: "border-gold/50 bg-transparent text-ivory",
-  muted: "border-ivory/20 bg-noir/40 text-ivory/80",
+  gold: "border-gold/70 bg-gold/10 text-noir",
+  outline: "border-gold/50 bg-transparent text-charcoal",
+  muted: "border-charcoal/15 bg-cream text-charcoal/80",
 };
 
 export function Badge({

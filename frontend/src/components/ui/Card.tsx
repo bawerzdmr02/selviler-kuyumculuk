@@ -21,20 +21,18 @@ export function Card({
   return (
     <Tag
       className={[
-        "relative bg-charcoal text-ivory",
-        "border border-gold/25",
+        "relative bg-surface text-charcoal shadow-sm",
+        "border border-gold/30",
         className,
       ].join(" ")}
       {...props}
     >
       {ornate && (
         <>
-          {/* Dış ince altın çerçeve — inset hairline */}
           <span
             aria-hidden
-            className="pointer-events-none absolute inset-2 border border-gold/35"
+            className="pointer-events-none absolute inset-2 border border-gold/25"
           />
-          {/* Köşe geometrik motifler */}
           <span
             aria-hidden
             className="pointer-events-none absolute left-1 top-1 h-3 w-3 border-l border-t border-gold"
@@ -58,7 +56,7 @@ export function Card({
         {title && (
           <header className="flex flex-col items-center gap-3 text-center">
             <GoldLine className="max-w-[8rem]" />
-            <h3 className="font-serif text-xl tracking-wide text-ivory sm:text-2xl">
+            <h3 className="font-serif text-xl tracking-wide text-noir sm:text-2xl">
               {title}
             </h3>
             <GoldLine className="max-w-[8rem]" />

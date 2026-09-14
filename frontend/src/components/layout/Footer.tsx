@@ -5,14 +5,14 @@ import { Divider } from "@/components/ui/Divider";
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-gold/20 bg-charcoal">
+    <footer className="mt-auto border-t border-gold/25 bg-cream">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-3">
           <div className="space-y-4">
-            <p className="font-serif text-xl tracking-[0.1em] text-ivory">
+            <p className="font-serif text-xl tracking-[0.1em] text-noir">
               {siteConfig.name}
             </p>
-            <p className="max-w-xs text-sm leading-relaxed text-ivory/70">
+            <p className="max-w-xs text-sm leading-relaxed text-charcoal/70">
               {siteConfig.description}
             </p>
           </div>
@@ -26,7 +26,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-ivory/75 transition-colors hover:text-gold-light"
+                    className="text-sm text-charcoal/75 transition-colors hover:text-gold"
                   >
                     {item.label}
                   </Link>
@@ -39,14 +39,14 @@ export function Footer() {
             <p className="text-xs uppercase tracking-[0.22em] text-gold">
               İletişim
             </p>
-            <ul className="space-y-3 text-sm text-ivory/75">
+            <ul className="space-y-3 text-sm text-charcoal/75">
               <li>{siteConfig.contact.address}</li>
               <li>
                 <a
                   href={siteConfig.contact.phoneHref}
-                  className="inline-flex items-center gap-2 transition-colors hover:text-gold-light"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-gold"
                 >
-                  <Phone size={14} aria-hidden />
+                  <Phone size={14} aria-hidden className="text-gold" />
                   {siteConfig.contact.phone}
                 </a>
               </li>
@@ -55,9 +55,9 @@ export function Footer() {
                   href={siteConfig.social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 transition-colors hover:text-gold-light"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-gold"
                 >
-                  <Camera size={14} aria-hidden />
+                  <Camera size={14} aria-hidden className="text-gold" />
                   Instagram
                 </a>
               </li>
@@ -75,13 +75,13 @@ export function Footer() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-xs tracking-wide text-ivory/50 transition-colors hover:text-gold-light"
+                className="text-xs tracking-wide text-charcoal/50 transition-colors hover:text-gold"
               >
                 {item.label}
               </Link>
             ))}
           </nav>
-          <p className="mt-4 text-center text-xs tracking-wide text-ivory/45">
+          <p className="mt-4 text-center text-xs tracking-wide text-charcoal/45">
             © {new Date().getFullYear()} {siteConfig.name}. Tüm hakları
             saklıdır.
           </p>
