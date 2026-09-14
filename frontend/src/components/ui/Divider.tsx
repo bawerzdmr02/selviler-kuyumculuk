@@ -2,7 +2,7 @@ import type { HTMLAttributes } from "react";
 import { GoldLine } from "./GoldLine";
 
 export type DividerProps = HTMLAttributes<HTMLDivElement> & {
-  /** Ortada küçük bir elmas / nokta motifi */
+  /** Ortada küçük bir altın nokta motifi */
   ornate?: boolean;
 };
 

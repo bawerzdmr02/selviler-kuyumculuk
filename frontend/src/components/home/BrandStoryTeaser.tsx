@@ -1,31 +1,31 @@
-import Link from "next/link";
-import { Divider } from "@/components/ui/Divider";
+"use client";
+
+import { Reveal } from "@/components/motion/Reveal";
+import { siteConfig } from "@/lib/site";
+import { ButtonLink } from "@/components/ui/ButtonLink";
 
 export function BrandStoryTeaser() {
   return (
-    <section className="border-y border-gold/20 bg-cream px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
-      <div className="mx-auto max-w-3xl text-center">
+    <section className="border-y border-gold/25 bg-ivory px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <Reveal className="mx-auto max-w-3xl text-center">
         <p className="mb-3 text-xs uppercase tracking-[0.28em] text-gold">
-          Marka hikayesi
+          Hakkımızda
         </p>
-        <h2 className="font-serif text-3xl text-noir sm:text-4xl">
-          Ustalık, güven ve zarafet
+        <h2 className="font-serif text-2xl text-noir sm:text-3xl">
+          Ustalıkla işlenmiş saf altın
         </h2>
-        <div className="mx-auto mt-6 max-w-xs">
-          <Divider />
-        </div>
-        <p className="mt-8 text-sm leading-relaxed text-charcoal/75 sm:text-base">
-          Selviler Kuyumculuk; nesiller boyu biriken ustalık bilgisini modern
-          çizgilerle buluşturur. Her parça, seçilmiş malzemeler ve titiz
-          işçilikle atölyemizde hayat bulur.
+        <p className="mt-6 text-sm leading-relaxed text-charcoal/75 sm:text-base">
+          {siteConfig.name} olarak yalnızca altına odaklanıyoruz. Bilezik,
+          küpe, kolye ve zincir — değerini kaybetmeyen, şık ve yatırımlık saf
+          altın parçalar sunuyoruz.
         </p>
-        <Link
-          href="/hakkimizda"
-          className="mt-8 inline-block text-xs uppercase tracking-[0.24em] text-gold transition-colors hover:text-noir"
-        >
-          Hikayemizi okuyun →
-        </Link>
-      </div>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <ButtonLink href="/hakkimizda" variant="outline">
+            Hikayemiz
+          </ButtonLink>
+          <ButtonLink href="/iletisim">İletişim</ButtonLink>
+        </div>
+      </Reveal>
     </section>
   );
 }

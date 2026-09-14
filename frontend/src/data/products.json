@@ -1,102 +1,138 @@
 {
   "categories": [
     {
-      "id": "yuzuk",
-      "name": "Yüzükler",
-      "slug": "yuzukler",
-      "description": "Zarafet ve incelikle işlenmiş altın yüzükler."
-    },
-    {
-      "id": "kolye",
-      "name": "Kolyeler",
-      "slug": "kolyeler",
-      "description": "Işıltılı taşlarla tamamlanan kolye koleksiyonu."
+      "id": "bilezik",
+      "name": "Bilezikler",
+      "slug": "bilezikler",
+      "description": "22 ve 14 ayar saf altın bilezik modelleri."
     },
     {
       "id": "kupe",
       "name": "Küpeler",
       "slug": "kupeler",
-      "description": "Günlük şıklıktan özel gecelere uzanan küpe seçkisi."
+      "description": "Halka ve sallantılı saf altın küpe modelleri."
     },
     {
-      "id": "bilezik",
-      "name": "Bilezikler",
-      "slug": "bilezikler",
-      "description": "Klasik ve çağdaş çizgilerde bilezik modelleri."
+      "id": "kolye",
+      "name": "Kolyeler",
+      "slug": "kolyeler",
+      "description": "Ustalıkla işlenmiş saf altın kolye modelleri."
+    },
+    {
+      "id": "zincir",
+      "name": "Zincirler",
+      "slug": "zincirler",
+      "description": "İtalyan ve klasik örgü saf altın zincirler."
     }
   ],
   "products": [
     {
       "id": "sk-001",
-      "name": "Selvi Alyans",
-      "slug": "selvi-alyans",
-      "categoryId": "yuzuk",
-      "featured": true,
-      "shortDescription": "İnce işçilikle hazırlanmış 14 ayar altın alyans.",
-      "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "id": "sk-002",
-      "name": "Nilüfer Tektaş",
-      "slug": "nilufer-tektas",
-      "categoryId": "yuzuk",
-      "featured": true,
-      "shortDescription": "Zarif tektaş yüzük — ışıkta parlayan bir vaat.",
-      "image": "https://images.unsplash.com/photo-1758995115445-c91788f5aa24?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "id": "sk-003",
-      "name": "Zeytin Dalı Kolye",
-      "slug": "zeytin-dali-kolye",
-      "categoryId": "kolye",
-      "featured": true,
-      "shortDescription": "Doğadan ilham alan altın zeytin dalı motifi.",
-      "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "id": "sk-004",
-      "name": "Ayışığı İnci Kolye",
-      "slug": "ayisigi-inci-kolye",
-      "categoryId": "kolye",
-      "featured": false,
-      "shortDescription": "Klasik inci ve altın zincirin sakin ışıltısı.",
-      "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "id": "sk-005",
-      "name": "Işık Damlası Küpe",
-      "slug": "isik-damlasi-kupe",
-      "categoryId": "kupe",
-      "featured": true,
-      "shortDescription": "Sarkaç formunda ince altın küpeler.",
-      "image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "id": "sk-006",
-      "name": "Yıldız Küpe",
-      "slug": "yildiz-kupe",
-      "categoryId": "kupe",
-      "featured": false,
-      "shortDescription": "Minimal yıldız detaylı günlük küpe çifti.",
-      "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "id": "sk-007",
-      "name": "Osmanlı Bilezik",
-      "slug": "osmanli-bilezik",
+      "name": "22 Ayar Adana Burma Bilezik",
+      "slug": "22-ayar-adana-burma-bilezik",
       "categoryId": "bilezik",
       "featured": true,
-      "shortDescription": "Geleneksel motiflerle çağdaş bir bilezik yorumu.",
+      "shortDescription": "Klasik Adana burma modeli — 22 ayar saf altın bilezik.",
       "image": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "id": "sk-008",
-      "name": "İnce Zincir Bilezik",
-      "slug": "ince-zincir-bilezik",
+      "id": "sk-002",
+      "name": "22 Ayar Ajda Bilezik",
+      "slug": "22-ayar-ajda-bilezik",
       "categoryId": "bilezik",
       "featured": false,
-      "shortDescription": "Katmanlanabilir ince altın zincir bilezik.",
+      "shortDescription": "Ajda kesim detaylı 22 ayar altın bilezik.",
+      "image": "https://images.unsplash.com/photo-1709295208567-ce817387e977?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-003",
+      "name": "Tam Altınlı Dorika Bileklik",
+      "slug": "tam-altinli-dorika-bileklik",
+      "categoryId": "bilezik",
+      "featured": false,
+      "shortDescription": "Dorika toplarla bezeli tam altın bileklik.",
+      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-004",
+      "name": "22 Ayar Halka Altın Küpe",
+      "slug": "22-ayar-halka-altin-kupe",
+      "categoryId": "kupe",
+      "featured": true,
+      "shortDescription": "Klasik halka formunda 22 ayar saf altın küpe.",
+      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-005",
+      "name": "14 Ayar Sallantılı Küpe",
+      "slug": "14-ayar-sallantili-kupe",
+      "categoryId": "kupe",
+      "featured": false,
+      "shortDescription": "Zarif sallantılı 14 ayar altın küpe çifti.",
+      "image": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-006",
+      "name": "14 Ayar İnce Halka Küpe",
+      "slug": "14-ayar-ince-halka-kupe",
+      "categoryId": "kupe",
+      "featured": false,
+      "shortDescription": "Günlük kullanım için ince halka 14 ayar altın küpe.",
       "image": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-007",
+      "name": "14 Ayar İtalyan Zincir Kolye",
+      "slug": "14-ayar-italyan-zincir-kolye",
+      "categoryId": "kolye",
+      "featured": true,
+      "shortDescription": "İtalyan işçiliğiyle üretilmiş 14 ayar altın kolye.",
+      "image": "https://images.unsplash.com/photo-1677144198413-f8bfe1f9a1aa?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-008",
+      "name": "22 Ayar Kalın Halat Kolye",
+      "slug": "22-ayar-kalin-halat-kolye",
+      "categoryId": "kolye",
+      "featured": false,
+      "shortDescription": "Halat örgülü 22 ayar saf altın kolye.",
+      "image": "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-009",
+      "name": "14 Ayar Figaro Zincir",
+      "slug": "14-ayar-figaro-zincir",
+      "categoryId": "zincir",
+      "featured": true,
+      "shortDescription": "Figaro örgü 14 ayar saf altın zincir.",
+      "image": "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-010",
+      "name": "22 Ayar Singapur Zincir",
+      "slug": "22-ayar-singapur-zincir",
+      "categoryId": "zincir",
+      "featured": false,
+      "shortDescription": "Parlak Singapur örgü 22 ayar altın zincir.",
+      "image": "https://images.unsplash.com/photo-1677144198413-f8bfe1f9a1aa?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-011",
+      "name": "14 Ayar İki Sıra Zincir",
+      "slug": "14-ayar-iki-sira-zincir",
+      "categoryId": "zincir",
+      "featured": false,
+      "shortDescription": "Katmanlanabilir iki sıra 14 ayar altın zincir.",
+      "image": "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "sk-012",
+      "name": "14 Ayar Gourmet Kolye",
+      "slug": "14-ayar-gourmet-kolye",
+      "categoryId": "kolye",
+      "featured": false,
+      "shortDescription": "Gourmet örgü 14 ayar saf altın kolye.",
+      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=80"
     }
   ]
 }

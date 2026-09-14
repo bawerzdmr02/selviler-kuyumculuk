@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Phone, MessageCircle } from "lucide-react";
 import { ContactForm } from "@/components/contact/ContactForm";
-import { Divider } from "@/components/ui/Divider";
 import { Card } from "@/components/ui/Card";
 import { siteConfig } from "@/lib/site";
 import { createPageMetadata } from "@/lib/seo";
@@ -19,32 +18,29 @@ export default function ContactPage() {
   const { contact } = siteConfig;
 
   return (
-    <div className="bg-ivory px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
-      <div className="mx-auto max-w-6xl">
-        <header className="mx-auto mb-16 max-w-2xl text-center">
-          <p className="mb-3 text-xs uppercase tracking-[0.28em] text-gold">
+    <div className="bg-ivory px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <header className="mx-auto mb-14 max-w-2xl text-center">
+          <p className="mb-3 text-xs uppercase tracking-[0.28em] text-muted">
             İletişim
           </p>
           <h1 className="font-serif text-4xl text-noir sm:text-5xl">
             Bize ulaşın
           </h1>
-          <div className="mx-auto mt-6 max-w-xs">
-            <Divider />
-          </div>
         </header>
 
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2">
           <div className="space-y-8">
             <Card title="Mağaza bilgileri">
               <ul className="space-y-4 text-sm text-charcoal/80">
                 <li>
-                  <p className="text-xs uppercase tracking-[0.18em] text-gold">
+                  <p className="text-xs uppercase tracking-[0.18em] text-muted">
                     Adres
                   </p>
                   <p className="mt-1 text-noir">{contact.address}</p>
                 </li>
                 <li>
-                  <p className="text-xs uppercase tracking-[0.18em] text-gold">
+                  <p className="text-xs uppercase tracking-[0.18em] text-muted">
                     Telefon
                   </p>
                   <a
@@ -56,7 +52,7 @@ export default function ContactPage() {
                   </a>
                 </li>
                 <li>
-                  <p className="text-xs uppercase tracking-[0.18em] text-gold">
+                  <p className="text-xs uppercase tracking-[0.18em] text-muted">
                     WhatsApp
                   </p>
                   <a
@@ -70,7 +66,7 @@ export default function ContactPage() {
                   </a>
                 </li>
                 <li>
-                  <p className="text-xs uppercase tracking-[0.18em] text-gold">
+                  <p className="text-xs uppercase tracking-[0.18em] text-muted">
                     Çalışma saatleri
                   </p>
                   <ul className="mt-2 space-y-1">
@@ -85,7 +81,7 @@ export default function ContactPage() {
               </ul>
             </Card>
 
-            <div className="overflow-hidden border border-gold/30 bg-surface shadow-sm">
+            <div className="overflow-hidden border border-border bg-surface shadow-card">
               <iframe
                 title="Selviler Kuyumculuk konum haritası"
                 src={contact.mapEmbedUrl}
@@ -94,7 +90,7 @@ export default function ContactPage() {
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
               />
-              <p className="border-t border-gold/20 bg-cream px-4 py-2 text-xs text-charcoal/50">
+              <p className="border-t border-border bg-ivory px-4 py-2 text-xs text-charcoal/50">
                 Uğur Mumcu Mah. · Sultangazi / İstanbul
               </p>
             </div>

@@ -2,16 +2,18 @@
 @config "../../tailwind.config.ts";
 
 :root {
-  /* Light Luxury — aydınlık zemin, koyu metin, altın vurgu */
-  --background: #f5f1e8;
-  --foreground: #1a1a1a;
-  --noir: #0a0a0a;
-  --charcoal: #1a1a1a;
+  /* Light Luxury + belirgin altın vurgular */
+  --background: #f7f5ee;
+  --foreground: #202020;
+  --noir: #202020;
+  --charcoal: #3a3a3a;
+  --muted: #616057;
   --gold: #c9a24b;
   --gold-light: #e5c97b;
-  --ivory: #f5f1e8;
+  --ivory: #f7f5ee;
   --cream: #fafaf8;
   --surface: #ffffff;
+  --border: #e5e1d6;
 }
 
 @theme inline {
@@ -19,19 +21,21 @@
   --color-foreground: var(--foreground);
   --color-noir: var(--noir);
   --color-charcoal: var(--charcoal);
+  --color-muted: var(--muted);
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-ivory: var(--ivory);
   --color-cream: var(--cream);
   --color-surface: var(--surface);
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --color-border: var(--border);
+  --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-caslon);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
 }
 
 h1,
@@ -40,6 +44,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-playfair), Georgia, serif;
+  font-family: var(--font-caslon), Georgia, "Times New Roman", serif;
   color: var(--noir);
+  font-weight: 600;
 }

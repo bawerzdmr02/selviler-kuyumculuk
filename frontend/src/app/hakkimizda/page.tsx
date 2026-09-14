@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Divider } from "@/components/ui/Divider";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -15,40 +14,37 @@ export function generateMetadata(): Metadata {
 
 const GALLERY = [
   {
-    src: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
-    alt: "Mağaza vitrini",
+    src: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80",
+    alt: "Saf altın bilezikler",
   },
   {
-    src: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1200&q=80",
-    alt: "Mücevher detayı",
+    src: "https://images.unsplash.com/photo-1677144198413-f8bfe1f9a1aa?auto=format&fit=crop&w=1200&q=80",
+    alt: "Altın kolye detayı",
   },
   {
     src: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1200&q=80",
-    alt: "Atölye işçiliği",
+    alt: "Altın takı işçiliği",
   },
 ];
 
 export default function AboutPage() {
   return (
     <div className="bg-ivory">
-      <section className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:px-8">
-        <p className="mb-3 text-xs uppercase tracking-[0.28em] text-gold">
+      <section className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-8">
+        <p className="mb-3 text-xs uppercase tracking-[0.28em] text-muted">
           Hakkımızda
         </p>
         <h1 className="font-serif text-4xl text-noir sm:text-5xl">
           Marka hikayemiz
         </h1>
-        <div className="mx-auto mt-6 max-w-xs">
-          <Divider />
-        </div>
         <p className="mt-8 text-sm leading-relaxed text-charcoal/75 sm:text-base">
-          Selviler Kuyumculuk, zamansız zarafeti günlük hayatın özel anlarına
-          taşımak için kuruldu. Her tasarımda dengeyi, saflığı ve uzun ömürlü
-          işçiliği ön planda tutuyoruz.
+          Selviler Kuyumculuk olarak yalnızca saf altına odaklanıyoruz. Bilezik,
+          küpe, kolye ve zincir — değerini kaybetmeyen, ustalıkla işlenmiş altın
+          koleksiyonları sunuyoruz.
         </p>
       </section>
 
-      <section className="border-y border-gold/20 bg-cream px-4 py-16 sm:px-6 lg:px-8">
+      <section className="border-y border-border bg-cream px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:gap-16">
           <div>
             <h2 className="font-serif text-2xl text-noir sm:text-3xl">
@@ -71,7 +67,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <h2 className="mb-10 text-center font-serif text-3xl text-noir">
           Mağazamızdan kareler
         </h2>
@@ -79,7 +75,7 @@ export default function AboutPage() {
           {GALLERY.map((item) => (
             <li
               key={item.src}
-              className="relative aspect-[4/5] overflow-hidden border border-gold/25 bg-surface shadow-sm"
+              className="relative aspect-[4/5] overflow-hidden border border-border bg-surface shadow-card"
             >
               <Image
                 src={item.src}

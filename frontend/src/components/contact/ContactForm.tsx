@@ -8,7 +8,6 @@ import { siteConfig } from "@/lib/site";
 /**
  * Faz 1: Backend yok.
  * Geçici çözüm: mailto — Faz 2'de Express API / kendi form endpoint'imize taşınacak.
- * Alternatif: Web3Forms / Formspree access key eklenebilir.
  */
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sent">("idle");
@@ -34,7 +33,7 @@ export function ContactForm() {
   }
 
   const fieldClass =
-    "w-full border border-gold/35 bg-cream px-4 py-3 text-sm text-noir placeholder:text-charcoal/40 focus:border-gold focus:outline-none";
+    "w-full border border-border bg-ivory px-4 py-3 text-sm text-noir placeholder:text-charcoal/40 focus:border-gold focus:outline-none";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
@@ -44,7 +43,10 @@ export function ContactForm() {
       </p>
 
       <div>
-        <label htmlFor="name" className="mb-2 block text-xs uppercase tracking-[0.18em] text-gold">
+        <label
+          htmlFor="name"
+          className="mb-2 block text-xs uppercase tracking-[0.18em] text-muted"
+        >
           Ad Soyad
         </label>
         <input
@@ -60,7 +62,10 @@ export function ContactForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="email" className="mb-2 block text-xs uppercase tracking-[0.18em] text-gold">
+          <label
+            htmlFor="email"
+            className="mb-2 block text-xs uppercase tracking-[0.18em] text-muted"
+          >
             E-posta
           </label>
           <input
@@ -74,7 +79,10 @@ export function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="phone" className="mb-2 block text-xs uppercase tracking-[0.18em] text-gold">
+          <label
+            htmlFor="phone"
+            className="mb-2 block text-xs uppercase tracking-[0.18em] text-muted"
+          >
             Telefon
           </label>
           <input
@@ -83,13 +91,16 @@ export function ContactForm() {
             type="tel"
             autoComplete="tel"
             className={fieldClass}
-            placeholder="+90 ..."
+            placeholder="0538 ..."
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-2 block text-xs uppercase tracking-[0.18em] text-gold">
+        <label
+          htmlFor="message"
+          className="mb-2 block text-xs uppercase tracking-[0.18em] text-muted"
+        >
           Mesaj
         </label>
         <textarea

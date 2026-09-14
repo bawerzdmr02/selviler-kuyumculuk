@@ -1,14 +1,14 @@
 export const siteConfig = {
   name: "Selviler Kuyumculuk",
-  tagline: "Zamanın ötesinde zarafet",
+  tagline: "Değerini hiç kaybetmeyen altın koleksiyonları",
   description:
-    "Ustalıkla işlenen altın ve mücevherlerle unutulmaz anlarınıza eşlik ediyoruz.",
+    "Yatırımlık ve şık altın takılar — ustalıkla işlenmiş saf altın.",
   /** Canlı domain — production'da NEXT_PUBLIC_SITE_URL ile override edilir */
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
     "https://selvilerkuyumculuk.com",
   ogImage:
-    "https://images.unsplash.com/photo-1758995115445-c91788f5aa24?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80",
   locale: "tr_TR",
   contact: {
     address:
@@ -51,6 +51,13 @@ export const siteConfig = {
     instagram: "https://instagram.com/",
     facebook: "https://facebook.com/",
   },
+  /** Ana kategoriler: Bilezikler, Küpeler, Kolyeler, Zincirler */
+  productNav: [
+    { href: "/koleksiyonlar#bilezikler", label: "Bilezikler", slug: "bilezikler" },
+    { href: "/koleksiyonlar#kupeler", label: "Küpeler", slug: "kupeler" },
+    { href: "/koleksiyonlar#kolyeler", label: "Kolyeler", slug: "kolyeler" },
+    { href: "/koleksiyonlar#zincirler", label: "Zincirler", slug: "zincirler" },
+  ],
   nav: [
     { href: "/", label: "Ana Sayfa" },
     { href: "/koleksiyonlar", label: "Koleksiyonlar" },

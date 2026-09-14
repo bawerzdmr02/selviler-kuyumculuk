@@ -3,10 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Camera, MapPin, Menu, Phone, X } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/cn";
-import { GoldLine } from "@/components/ui/GoldLine";
 
 export function Header() {
   const pathname = usePathname();
@@ -24,35 +23,34 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gold/25 bg-ivory/95 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-ivory/95 backdrop-blur-md">
+      <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center gap-4 px-4 sm:h-20 sm:px-6 lg:px-8">
         <Link
           href="/"
           onClick={closeMenu}
-          className="font-serif text-lg tracking-[0.12em] text-noir transition-colors hover:text-gold sm:text-xl"
+          className="shrink-0 leading-none transition-opacity hover:opacity-80"
         >
-          {siteConfig.name}
+          <span className="block font-serif text-2xl tracking-[0.08em] text-noir sm:text-[1.75rem]">
+            SELVİLER
+          </span>
+          <span className="mt-0.5 block font-sans text-[0.65rem] uppercase tracking-[0.35em] text-muted">
+            Kuyumculuk
+          </span>
         </Link>
 
         <nav
-          aria-label="Ana menü"
-          className="hidden items-center gap-8 md:flex"
+          aria-label="Ürün kategorileri"
+          className="ml-6 hidden flex-1 items-center justify-center gap-1 lg:flex xl:gap-2"
         >
-          {siteConfig.nav.map((item) => {
-            const active =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href);
-
+          {siteConfig.productNav.map((item) => {
+            const active = pathname.startsWith("/koleksiyonlar");
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-xs uppercase tracking-[0.22em] transition-colors",
-                  active
-                    ? "text-gold"
-                    : "text-charcoal/70 hover:text-gold"
+                  "px-2 py-2 font-sans text-[0.7rem] uppercase tracking-[0.1em] text-noir transition-colors duration-300 hover:text-gold xl:px-3 xl:text-[0.8rem]",
+                  active && "text-gold"
                 )}
               >
                 {item.label}
@@ -61,51 +59,79 @@ export function Header() {
           })}
         </nav>
 
-        <button
-          type="button"
-          className="inline-flex items-center justify-center border border-gold/50 p-2 text-noir md:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="ml-auto flex items-center gap-1 sm:gap-2">
+          <a
+            href={siteConfig.contact.phoneHref}
+            className="hidden items-center gap-1.5 px-2 py-2 text-noir transition-colors hover:text-gold md:inline-flex"
+            aria-label="Telefon"
+          >
+            <Phone size={16} strokeWidth={1.5} />
+            <span className="hidden text-xs tracking-wide xl:inline">
+              {siteConfig.contact.phone}
+            </span>
+          </a>
+          <a
+            href="/iletisim"
+            className="inline-flex p-2 text-noir transition-colors hover:text-gold"
+            aria-label="Konum"
+          >
+            <MapPin size={17} strokeWidth={1.5} />
+          </a>
+          <a
+            href={siteConfig.social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex p-2 text-noir transition-colors hover:text-gold"
+            aria-label="Instagram"
+          >
+            <Camera size={17} strokeWidth={1.5} />
+          </a>
+
+          <button
+            type="button"
+            className="inline-flex border border-border p-2 text-noir lg:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
       </div>
 
-      <GoldLine className="opacity-70" />
-
       {open && (
-        <div
-          id="mobile-nav"
-          className="border-t border-gold/20 bg-ivory md:hidden"
-        >
+        <div id="mobile-nav" className="border-t border-border bg-ivory lg:hidden">
           <nav
             aria-label="Mobil menü"
-            className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-6"
+            className="mx-auto flex max-w-7xl flex-col px-4 py-4"
           >
-            {siteConfig.nav.map((item) => {
-              const active =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href);
-
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={closeMenu}
-                  className={cn(
-                    "border border-transparent px-3 py-3 text-sm uppercase tracking-[0.2em]",
-                    active
-                      ? "border-gold/40 text-gold"
-                      : "text-charcoal/80"
-                  )}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
+            <p className="mb-2 px-3 text-[0.65rem] uppercase tracking-[0.2em] text-muted">
+              Kategoriler
+            </p>
+            {siteConfig.productNav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={closeMenu}
+                className="border-b border-border/60 px-3 py-3 font-sans text-sm uppercase tracking-[0.12em] text-noir"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <p className="mb-2 mt-4 px-3 text-[0.65rem] uppercase tracking-[0.2em] text-muted">
+              Sayfalar
+            </p>
+            {siteConfig.nav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={closeMenu}
+                className="px-3 py-2.5 text-sm text-charcoal"
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
         </div>
       )}

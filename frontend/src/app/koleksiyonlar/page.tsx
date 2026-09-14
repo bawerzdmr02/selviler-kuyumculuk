@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ProductCard } from "@/components/products/ProductCard";
-import { Divider } from "@/components/ui/Divider";
 import { getCategories, getProductsByCategory } from "@/lib/products";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -8,7 +7,7 @@ export function generateMetadata(): Metadata {
   return createPageMetadata({
     title: "Koleksiyonlar",
     description:
-      "Selviler Kuyumculuk statik koleksiyon galerisi — yüzük, kolye, küpe ve bilezik.",
+      "Selviler Kuyumculuk saf altın koleksiyonu — bilezik, küpe, kolye ve zincir.",
     path: "/koleksiyonlar",
   });
 }
@@ -17,21 +16,18 @@ export default function CollectionsPage() {
   const categories = getCategories();
 
   return (
-    <div className="bg-ivory px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
-      <div className="mx-auto max-w-6xl">
-        <header className="mx-auto mb-16 max-w-2xl text-center">
+    <div className="bg-ivory px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <header className="mx-auto mb-14 max-w-2xl text-center">
           <p className="mb-3 text-xs uppercase tracking-[0.28em] text-gold">
-            Galeri
+            Saf altın
           </p>
           <h1 className="font-serif text-4xl text-noir sm:text-5xl">
-            Koleksiyonlar
+            Altın Koleksiyonları
           </h1>
-          <div className="mx-auto mt-6 max-w-xs">
-            <Divider />
-          </div>
           <p className="mt-6 text-sm leading-relaxed text-charcoal/70 sm:text-base">
-            Şimdilik görsel bir vitrin sunuyoruz. Ürün detayı, fiyat ve stok
-            bilgisi Faz 2&apos;de e-ticaret altyapısıyla birlikte gelecek.
+            Mağazamızda yalnızca altın satılır: bilezik, küpe, kolye ve zincir.
+            İnci, pırlanta veya değerli taş bulunmaz.
           </p>
         </header>
 
@@ -41,7 +37,7 @@ export default function CollectionsPage() {
 
             return (
               <section key={category.id} id={category.slug}>
-                <div className="mb-8 max-w-xl">
+                <div className="mb-8 max-w-xl border-l-2 border-gold pl-4">
                   <h2 className="font-serif text-2xl text-noir sm:text-3xl">
                     {category.name}
                   </h2>
@@ -49,10 +45,10 @@ export default function CollectionsPage() {
                     {category.description}
                   </p>
                 </div>
-                <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {products.map((product) => (
+                <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+                  {products.map((product, index) => (
                     <li key={product.id}>
-                      <ProductCard product={product} />
+                      <ProductCard product={product} index={index} />
                     </li>
                   ))}
                 </ul>

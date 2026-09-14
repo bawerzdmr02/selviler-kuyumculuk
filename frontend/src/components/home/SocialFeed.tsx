@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { Camera } from "lucide-react";
 import { siteConfig } from "@/lib/site";
-import { Divider } from "@/components/ui/Divider";
 
+/** Salt altın görseller — taş / inci / pırlanta yok */
 const SOCIAL_IMAGES = [
-  "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80",
   "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1677144198413-f8bfe1f9a1aa?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=800&q=80",
 ];
 
 export function SocialFeed() {
@@ -19,9 +19,6 @@ export function SocialFeed() {
             Sosyal
           </p>
           <h2 className="font-serif text-3xl text-noir">Instagram&apos;da Biz</h2>
-          <div className="mt-6 w-full max-w-xs">
-            <Divider />
-          </div>
           <a
             href={siteConfig.social.instagram}
             target="_blank"
@@ -41,7 +38,7 @@ export function SocialFeed() {
             >
               <Image
                 src={src}
-                alt={`Sosyal medya görseli ${index + 1}`}
+                alt={`Altın takı görseli ${index + 1}`}
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover"

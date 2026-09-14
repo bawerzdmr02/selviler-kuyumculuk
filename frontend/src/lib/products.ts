@@ -22,3 +22,17 @@ export function getProductsByCategory(categoryId: string): Product[] {
 export function getCategoryById(categoryId: string): Category | undefined {
   return data.categories.find((category) => category.id === categoryId);
 }
+
+/** Her kategoriden bir temsilî ürün (öne çıkan vitrin için) */
+export function getShowcaseByCategory(): Product[] {
+  return data.categories
+    .map((category) => {
+      const inCategory = data.products.filter(
+        (product) => product.categoryId === category.id
+      );
+      return (
+        inCategory.find((product) => product.featured) ?? inCategory[0]
+      );
+    })
+    .filter((product): product is Product => Boolean(product));
+}
