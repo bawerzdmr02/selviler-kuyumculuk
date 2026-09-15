@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Camera, MapPin, Menu, Phone, X } from "lucide-react";
+import { Camera, MapPin, Menu, Phone, ShoppingBag, UserRound, X } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/cn";
 
@@ -88,6 +88,28 @@ export function Header() {
           >
             <Camera size={17} strokeWidth={1.5} />
           </a>
+          <Link
+            href="/hesabim"
+            onClick={closeMenu}
+            className={cn(
+              "inline-flex p-2 text-noir transition-colors hover:text-gold",
+              pathname.startsWith("/hesabim") && "text-gold"
+            )}
+            aria-label="Hesabım"
+          >
+            <UserRound size={17} strokeWidth={1.5} />
+          </Link>
+          <Link
+            href="/sepet"
+            onClick={closeMenu}
+            className={cn(
+              "inline-flex p-2 text-noir transition-colors hover:text-gold",
+              pathname.startsWith("/sepet") && "text-gold"
+            )}
+            aria-label="Sepet"
+          >
+            <ShoppingBag size={17} strokeWidth={1.5} />
+          </Link>
 
           <button
             type="button"
@@ -134,6 +156,20 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/hesabim"
+              onClick={closeMenu}
+              className="px-3 py-2.5 text-sm text-charcoal"
+            >
+              Hesabım
+            </Link>
+            <Link
+              href="/sepet"
+              onClick={closeMenu}
+              className="px-3 py-2.5 text-sm text-charcoal"
+            >
+              Sepet
+            </Link>
           </nav>
         </div>
       )}

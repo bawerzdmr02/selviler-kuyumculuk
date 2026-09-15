@@ -107,6 +107,8 @@
 - [x] **İletişim formu:** Backend henüz yok — 3. parti bir form servisi kullan (ör. Web3Forms veya Formspree) ya da basit `mailto:` linki; Faz 2'de kendi backend'imize taşınacak şekilde not düş
 - [x] Header/Footer bileşenlerini tüm sayfalarda ortak `layout.tsx` üzerinden kur
 - [x] 404 sayfası (`app/not-found.tsx`) özel tasarımla oluştur
+- [x] **Sepet sayfası (UI):** Statik/mock sepet listesi + sipariş özeti + “Alışverişi Tamamla” (Faz 2’de gerçek sepet/ödeme bağlanacak)
+- [x] **Hesabım sayfası (UI):** Profil / siparişler / adresler paneli — mock veri ile (auth Faz 2)
 
 ## 5. SEO, Performans ve Yasal Sayfalar
 
