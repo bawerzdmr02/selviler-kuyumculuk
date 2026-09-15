@@ -7,7 +7,7 @@ export function generateMetadata(): Metadata {
   return createPageMetadata({
     title: "Koleksiyonlar",
     description:
-      "Selviler Kuyumculuk saf altın koleksiyonu — bilezik, küpe, kolye ve zincir.",
+      "Selviler Kuyumculuk saf altın koleksiyonu — bilezik, küpe, kolye, zincir ve yüzük.",
     path: "/koleksiyonlar",
   });
 }
@@ -26,8 +26,8 @@ export default function CollectionsPage() {
             Altın Koleksiyonları
           </h1>
           <p className="mt-6 text-sm leading-relaxed text-charcoal/70 sm:text-base">
-            Mağazamızda yalnızca altın satılır: bilezik, küpe, kolye ve zincir.
-            İnci, pırlanta veya değerli taş bulunmaz.
+            Mağazamızda yalnızca altın satılır: bilezik, küpe, kolye, zincir ve
+            yüzük. İnci, pırlanta veya değerli taş bulunmaz.
           </p>
         </header>
 

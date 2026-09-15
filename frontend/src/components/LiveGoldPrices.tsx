@@ -4,7 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { TrendingDown, TrendingUp } from "lucide-react";
 import { Reveal, RevealItem, RevealStagger } from "@/components/motion/Reveal";
-import type { GoldApiResponse, GoldQuote } from "@/lib/gold";
+import {
+  HAREM_HOME_QUOTE_IDS,
+  type GoldApiResponse,
+  type GoldQuote,
+} from "@/lib/gold";
 
 /** Cloudflare ban riski göze alınarak minimum yenileme */
 const POLL_MS = 2_000;
@@ -136,7 +140,11 @@ export function LiveGoldPrices() {
         if (cancelled) return;
         if (!Array.isArray(data.quotes) || data.quotes.length === 0) return;
 
-        setQuotes(data.quotes);
+        const homeIds = new Set<string>(HAREM_HOME_QUOTE_IDS);
+        const homeQuotes = data.quotes.filter((q) => homeIds.has(q.id));
+        if (homeQuotes.length === 0) return;
+
+        setQuotes(homeQuotes);
         setUpdatedAt(data.updatedAt || new Date().toLocaleString("tr-TR"));
       } catch {
         // Abort / ağ / 429 sonrası sessiz bekleme — eski rakamlar korunur

@@ -1,6 +1,8 @@
 import { io, type Socket } from "socket.io-client";
 import {
+  parseHaremFxQuotes,
   parseHaremGoldQuotes,
+  type FxQuote,
   type GoldApiResponse,
   type GoldQuote,
 } from "@/lib/gold";
@@ -8,15 +10,30 @@ import {
 const HAREM_SOCKET_URL = "wss://hrmsocketonly.haremaltin.com:443";
 
 const WANTED_KEYS = [
-  "KULCEALTIN",
   "ALTIN",
+  "AYAR22",
+  "KULCEALTIN",
   "CEYREK_YENI",
-  "YARIM_YENI",
-  "TEK_YENI",
   "CEYREK_ESKI",
+  "YARIM_YENI",
   "YARIM_ESKI",
+  "TEK_YENI",
   "TEK_ESKI",
   "TAM_YENI",
+  "TAM_ESKI",
+  "ATA_YENI",
+  "ATAALTIN",
+  "CUMHURIYETALTINI",
+  "GREMESE_YENI",
+  "GREMESE_ESKI",
+  "GREMSEALTIN",
+  "ONS",
+  "XAUUSD",
+  "USDONS",
+  "USDTRY",
+  "USD",
+  "EURTRY",
+  "EUR",
 ];
 
 type HaremSnapshot = {
@@ -27,6 +44,7 @@ type HaremSnapshot = {
 let socket: Socket | null = null;
 let snapshot: HaremSnapshot | null = null;
 let lastQuotes: GoldQuote[] | null = null;
+let lastFx: FxQuote[] | null = null;
 let connecting = false;
 
 function mergeRows(
@@ -34,7 +52,22 @@ function mergeRows(
 ): Record<string, unknown> {
   const base = { ...(snapshot?.data ?? {}) };
   for (const [key, value] of Object.entries(incoming)) {
-    if (WANTED_KEYS.includes(key) || key.includes("ALTIN") || key.includes("CEYREK") || key.includes("YARIM") || key.includes("TEK") || key.includes("TAM")) {
+    if (
+      WANTED_KEYS.includes(key) ||
+      key.includes("ALTIN") ||
+      key.includes("AYAR") ||
+      key.includes("CEYREK") ||
+      key.includes("YARIM") ||
+      key.includes("TEK") ||
+      key.includes("TAM") ||
+      key.includes("ATA") ||
+      key.includes("GREME") ||
+      key.includes("GREMS") ||
+      key.includes("USD") ||
+      key.includes("EUR") ||
+      key.includes("ONS") ||
+      key.includes("XAU")
+    ) {
       base[key] = value;
     }
   }
@@ -47,6 +80,18 @@ function tryBuildQuotes(data: Record<string, unknown>): GoldQuote[] | null {
   } catch {
     return null;
   }
+}
+
+function buildResponse(): GoldApiResponse | null {
+  if (!lastQuotes) return null;
+  return {
+    source: "live",
+    updatedAt: new Date(snapshot?.updatedAtMs ?? Date.now()).toLocaleString(
+      "tr-TR"
+    ),
+    quotes: lastQuotes,
+    fx: lastFx && lastFx.length > 0 ? lastFx : undefined,
+  };
 }
 
 function ensureSocket() {
@@ -75,20 +120,28 @@ function ensureSocket() {
     connecting = false;
   });
 
-  socket.on("price_changed", (rec: { data?: Record<string, unknown>; meta?: { time?: number } }) => {
-    if (!rec?.data || typeof rec.data !== "object") return;
+  socket.on(
+    "price_changed",
+    (rec: { data?: Record<string, unknown>; meta?: { time?: number } }) => {
+      if (!rec?.data || typeof rec.data !== "object") return;
 
-    const merged = mergeRows(rec.data);
-    snapshot = {
-      data: merged,
-      updatedAtMs: Number(rec.meta?.time) || Date.now(),
-    };
+      const merged = mergeRows(rec.data);
+      snapshot = {
+        data: merged,
+        updatedAtMs: Number(rec.meta?.time) || Date.now(),
+      };
 
-    const quotes = tryBuildQuotes(merged);
-    if (quotes) {
-      lastQuotes = quotes;
+      const quotes = tryBuildQuotes(merged);
+      if (quotes) {
+        lastQuotes = quotes;
+      }
+
+      const fx = parseHaremFxQuotes(merged);
+      if (fx.length > 0) {
+        lastFx = fx;
+      }
     }
-  });
+  );
 }
 
 function waitForQuotes(timeoutMs: number): Promise<GoldQuote[] | null> {
@@ -114,25 +167,22 @@ function waitForQuotes(timeoutMs: number): Promise<GoldQuote[] | null> {
 export async function getHaremLiveQuotes(): Promise<GoldApiResponse | null> {
   ensureSocket();
 
-  const quotes = lastQuotes ?? (await waitForQuotes(4000));
+  const quotes = lastQuotes ?? (await waitForQuotes(5000));
   if (!quotes) return null;
+  lastQuotes = quotes;
 
-  return {
-    source: "live",
-    updatedAt: new Date(
-      snapshot?.updatedAtMs ?? Date.now()
-    ).toLocaleString("tr-TR"),
-    quotes,
-  };
+  // FX henüz gelmediyse kısa bekle
+  if (!lastFx || lastFx.length === 0) {
+    await new Promise((r) => setTimeout(r, 800));
+    if (snapshot?.data) {
+      const fx = parseHaremFxQuotes(snapshot.data);
+      if (fx.length > 0) lastFx = fx;
+    }
+  }
+
+  return buildResponse();
 }
 
 export function getCachedHaremQuotes(): GoldApiResponse | null {
-  if (!lastQuotes) return null;
-  return {
-    source: "live",
-    updatedAt: new Date(
-      snapshot?.updatedAtMs ?? Date.now()
-    ).toLocaleString("tr-TR"),
-    quotes: lastQuotes,
-  };
+  return buildResponse();
 }

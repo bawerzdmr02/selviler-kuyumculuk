@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import {
-  getMockGoldResponse,
+  parseHaremFxQuotes,
   parseHaremGoldQuotes,
   type GoldApiResponse,
 } from "@/lib/gold";
@@ -48,10 +48,29 @@ function extractDataBag(
   if (root.data && typeof root.data === "object") {
     return root.data as Record<string, unknown>;
   }
-  if ("ALTIN" in root || "CEYREK_YENI" in root || "KULCEALTIN" in root) {
+  if (
+    "ALTIN" in root ||
+    "CEYREK_YENI" in root ||
+    "KULCEALTIN" in root ||
+    "USDTRY" in root
+  ) {
     return root;
   }
   return null;
+}
+
+function buildFromData(
+  data: Record<string, unknown>,
+  previous?: GoldApiResponse | null
+): GoldApiResponse {
+  const quotes = parseHaremGoldQuotes(data, previous?.quotes);
+  const fx = parseHaremFxQuotes(data);
+  return {
+    source: "live",
+    updatedAt: new Date().toLocaleString("tr-TR"),
+    quotes,
+    fx: fx.length > 0 ? fx : previous?.fx,
+  };
 }
 
 async function fetchHaremAjax(): Promise<GoldApiResponse | null> {
@@ -83,12 +102,7 @@ async function fetchHaremAjax(): Promise<GoldApiResponse | null> {
       const data = extractDataBag(payload);
       if (!data) continue;
 
-      const quotes = parseHaremGoldQuotes(data, lastSuccessful?.quotes);
-      return {
-        source: "live",
-        updatedAt: new Date().toLocaleString("tr-TR"),
-        quotes,
-      };
+      return buildFromData(data, lastSuccessful);
     } catch {
       // Sonraki URL / Socket
     }
@@ -104,14 +118,12 @@ export async function GET() {
 
     if (fromSocket) {
       lastSuccessful = fromSocket;
-      // AJAX’i arka planda dene (header seti korunur; yanıt gelirse cache güncellenir)
       void fetchHaremAjax().then((ajax) => {
         if (ajax) lastSuccessful = ajax;
       });
       return jsonOk(fromSocket);
     }
 
-    // Soğuk başlangıç: AJAX dene
     const fromAjax = await fetchHaremAjax();
     if (fromAjax) {
       lastSuccessful = fromAjax;
@@ -120,13 +132,31 @@ export async function GET() {
 
     throw new Error("Harem kaynağına ulaşılamadı");
   } catch {
-    const fallback: GoldApiResponse = lastSuccessful
-      ? { ...lastSuccessful, source: "live" }
-      : getCachedHaremQuotes() ?? {
-          ...getMockGoldResponse(),
-          source: "live",
-        };
+    // Ticari TV güvenliği: eski/mock fiyatı "live" diye yutturmayız.
+    // TV ekranı source !== "live" veya 503 görünce fiyatları gizler.
+    if (lastSuccessful) {
+      return jsonOk({ ...lastSuccessful, source: "fallback" });
+    }
 
-    return jsonOk(fallback);
+    const cached = getCachedHaremQuotes();
+    if (cached) {
+      return jsonOk({ ...cached, source: "fallback" });
+    }
+
+    return NextResponse.json(
+      {
+        source: "fallback",
+        updatedAt: new Date().toLocaleString("tr-TR"),
+        quotes: [],
+        fx: [],
+      } satisfies GoldApiResponse,
+      {
+        status: 503,
+        headers: {
+          "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+          Pragma: "no-cache",
+        },
+      }
+    );
   }
 }

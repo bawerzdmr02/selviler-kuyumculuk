@@ -43,7 +43,9 @@ export function Header() {
           className="ml-6 hidden flex-1 items-center justify-center gap-1 lg:flex xl:gap-2"
         >
           {siteConfig.productNav.map((item) => {
-            const active = pathname.startsWith("/koleksiyonlar");
+            const active =
+              pathname.startsWith("/koleksiyonlar") ||
+              pathname.startsWith("/kategori");
             return (
               <Link
                 key={item.href}

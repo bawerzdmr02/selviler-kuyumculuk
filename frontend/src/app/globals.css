@@ -48,3 +48,51 @@ h6 {
   color: var(--noir);
   font-weight: 600;
 }
+
+/* Smart TV OLED burn-in koruması — ~5 dk’da bir hafif kayma */
+@keyframes oled-float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(3px, 2px);
+  }
+  40% {
+    transform: translate(-2px, 3px);
+  }
+  60% {
+    transform: translate(2px, -2px);
+  }
+  80% {
+    transform: translate(-3px, -1px);
+  }
+}
+
+.oled-float {
+  animation: oled-float 300s ease-in-out infinite;
+}
+
+/* Smart TV ekranı: global h1–h6 noir rengini ez */
+.tv-board h1,
+.tv-board h2,
+.tv-board h3,
+.tv-board h4,
+.tv-board h5,
+.tv-board h6 {
+  color: inherit;
+}
+
+/* TV panosu kayan yazı */
+@keyframes tv-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tv-marquee {
+  animation: tv-marquee 45s linear infinite;
+}

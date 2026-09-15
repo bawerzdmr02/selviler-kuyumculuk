@@ -26,7 +26,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
       }}
       className="group relative flex h-full flex-col overflow-hidden border border-transparent bg-surface shadow-card transition-all duration-500 hover:border-gold/40 hover:shadow-card-hover"
     >
-      <Link href="/koleksiyonlar" className="relative block aspect-[4/5] overflow-hidden bg-cream">
+      <Link href={`/urun/${product.slug}`} className="relative block aspect-[4/5] overflow-hidden bg-cream">
         <Image
           src={product.image}
           alt={product.name}
@@ -50,11 +50,20 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             {category.name}
           </p>
         )}
-        <h3 className="font-serif text-lg text-noir transition-colors duration-300 group-hover:text-gold sm:text-xl">
-          {product.name}
-        </h3>
+        <Link href={`/urun/${product.slug}`}>
+          <h3 className="font-serif text-lg text-noir transition-colors duration-300 group-hover:text-gold sm:text-xl">
+            {product.name}
+          </h3>
+        </Link>
         <p className="mt-1 text-sm leading-relaxed text-charcoal/70">
           {product.shortDescription}
+        </p>
+        <p className="mt-2 text-sm font-bold tabular-nums text-noir">
+          {new Intl.NumberFormat("tr-TR", {
+            style: "currency",
+            currency: "TRY",
+            maximumFractionDigits: 0,
+          }).format(product.price)}
         </p>
       </div>
     </motion.article>

@@ -7,27 +7,33 @@ import { Reveal, RevealItem, RevealStagger } from "@/components/motion/Reveal";
 const CATEGORY_TILES = [
   {
     label: "Bilezikler",
-    href: "/koleksiyonlar#bilezikler",
+    href: "/kategori/bilezikler",
     image:
       "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80",
   },
   {
     label: "Küpeler",
-    href: "/koleksiyonlar#kupeler",
+    href: "/kategori/kupeler",
     image:
       "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=80",
   },
   {
     label: "Kolyeler",
-    href: "/koleksiyonlar#kolyeler",
+    href: "/kategori/kolyeler",
     image:
       "https://images.unsplash.com/photo-1677144198413-f8bfe1f9a1aa?auto=format&fit=crop&w=1200&q=80",
   },
   {
     label: "Zincirler",
-    href: "/koleksiyonlar#zincirler",
+    href: "/kategori/zincirler",
     image:
       "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    label: "Yüzükler",
+    href: "/kategori/yuzukler",
+    image:
+      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
@@ -44,7 +50,7 @@ export function CategoryShop() {
           </h2>
         </Reveal>
 
-        <RevealStagger className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+        <RevealStagger className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
           {CATEGORY_TILES.map((tile) => (
             <RevealItem key={tile.href}>
               <Link
@@ -55,7 +61,7 @@ export function CategoryShop() {
                   src={tile.image}
                   alt={tile.label}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div

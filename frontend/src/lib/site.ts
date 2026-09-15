@@ -23,7 +23,7 @@ export const siteConfig = {
     email: "info@selvilerkuyumculuk.com",
     whatsapp: "https://wa.me/905380643771",
     mapEmbedUrl:
-      "https://maps.google.com/maps?q=U%C4%9Fur%20Mumcu%20Mah.%20Muhsin%20Yaz%C4%B1c%C4%B1o%C4%9Flu%20Cad.%20No:11/A%20Sultangazi%20%C4%B0stanbul&t=&z=16&ie=UTF8&iwloc=&output=embed",
+      "https://maps.google.com/maps?q=Selviler%20Kuyumculuk,%20Istanbul&t=&z=15&ie=UTF8&iwloc=&output=embed",
     geo: {
       latitude: 41.1064,
       longitude: 28.8681,
@@ -51,12 +51,13 @@ export const siteConfig = {
     instagram: "https://instagram.com/",
     facebook: "https://facebook.com/",
   },
-  /** Ana kategoriler: Bilezikler, Küpeler, Kolyeler, Zincirler */
+  /** Ana kategoriler: Bilezikler, Küpeler, Kolyeler, Zincirler, Yüzükler */
   productNav: [
-    { href: "/koleksiyonlar#bilezikler", label: "Bilezikler", slug: "bilezikler" },
-    { href: "/koleksiyonlar#kupeler", label: "Küpeler", slug: "kupeler" },
-    { href: "/koleksiyonlar#kolyeler", label: "Kolyeler", slug: "kolyeler" },
-    { href: "/koleksiyonlar#zincirler", label: "Zincirler", slug: "zincirler" },
+    { href: "/kategori/bilezikler", label: "Bilezikler", slug: "bilezikler" },
+    { href: "/kategori/kupeler", label: "Küpeler", slug: "kupeler" },
+    { href: "/kategori/kolyeler", label: "Kolyeler", slug: "kolyeler" },
+    { href: "/kategori/zincirler", label: "Zincirler", slug: "zincirler" },
+    { href: "/kategori/yuzukler", label: "Yüzükler", slug: "yuzukler" },
   ],
   nav: [
     { href: "/", label: "Ana Sayfa" },

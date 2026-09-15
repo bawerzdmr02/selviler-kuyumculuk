@@ -6,41 +6,182 @@ export type GoldQuote = {
   change: number;
 };
 
+export type FxQuote = {
+  id: "ons" | "usd" | "eur";
+  code: "ONS" | "USD" | "EUR";
+  buying: number;
+  selling: number;
+};
+
 export type GoldApiResponse = {
   source: "live" | "fallback";
   updatedAt: string;
   quotes: GoldQuote[];
+  /** TV header: Ons / USD / EUR */
+  fx?: FxQuote[];
 };
 
-/** Harem Altın / Kapalıçarşı kodları → vitrin etiketleri */
-export const HAREM_GOLD_ITEMS: Array<{
+export type HaremGoldItem = {
   keys: string[];
   label: string;
   id: string;
-}> = [
-  { keys: ["KULCEALTIN", "ALTIN"], label: "Gram Altın", id: "gram" },
-  { keys: ["CEYREK_YENI", "CEYREK_ESKI"], label: "Çeyrek Altın", id: "ceyrek" },
-  { keys: ["YARIM_YENI", "YARIM_ESKI"], label: "Yarım Altın", id: "yarim" },
-  { keys: ["TEK_YENI", "TEK_ESKI", "TAM_YENI"], label: "Tam Altın", id: "tam" },
+  /** false ise veride yoksa atlanır (ör. Gremse) */
+  required?: boolean;
+};
+
+/**
+ * Harem Altın / Kapalıçarşı — TV + API tam liste
+ * (eski/yeni sarrafiye + has + 22 ayar + ata + gremse)
+ */
+export const HAREM_GOLD_ITEMS: HaremGoldItem[] = [
+  { keys: ["ALTIN"], label: "Has Altın (24 Ayar)", id: "has", required: true },
+  { keys: ["AYAR22"], label: "22 Ayar Altın", id: "ayar22", required: true },
+  {
+    keys: ["CEYREK_YENI"],
+    label: "Yeni Çeyrek",
+    id: "ceyrek_yeni",
+    required: true,
+  },
+  {
+    keys: ["CEYREK_ESKI"],
+    label: "Eski Çeyrek",
+    id: "ceyrek_eski",
+    required: true,
+  },
+  {
+    keys: ["YARIM_YENI"],
+    label: "Yeni Yarım",
+    id: "yarim_yeni",
+    required: true,
+  },
+  {
+    keys: ["YARIM_ESKI"],
+    label: "Eski Yarım",
+    id: "yarim_eski",
+    required: true,
+  },
+  {
+    keys: ["TEK_YENI", "TAM_YENI"],
+    label: "Yeni Tam",
+    id: "tam_yeni",
+    required: true,
+  },
+  {
+    keys: ["TEK_ESKI", "TAM_ESKI"],
+    label: "Eski Tam",
+    id: "tam_eski",
+    required: true,
+  },
+  {
+    keys: ["ATA_YENI", "ATAALTIN", "CUMHURIYETALTINI"],
+    label: "Ata Lira",
+    id: "ata",
+    required: true,
+  },
+  {
+    keys: ["GREMESE_YENI", "GREMESE_ESKI", "GREMSEALTIN"],
+    label: "Gremse",
+    id: "gremse",
+    required: false,
+  },
 ];
 
+/** Header döviz / ons — Harem kod eşlemesi */
+export const HAREM_FX_ITEMS: Array<{
+  keys: string[];
+  id: FxQuote["id"];
+  code: FxQuote["code"];
+}> = [
+  { keys: ["ONS", "XAUUSD", "USDONS"], id: "ons", code: "ONS" },
+  { keys: ["USDTRY", "USD"], id: "usd", code: "USD" },
+  { keys: ["EURTRY", "EUR"], id: "eur", code: "EUR" },
+];
+
+/** Ana sayfa vitrini — 4 kart */
+export const HAREM_HOME_QUOTE_IDS = [
+  "has",
+  "ceyrek_yeni",
+  "yarim_yeni",
+  "tam_yeni",
+] as const;
+
 export const MOCK_GOLD_QUOTES: GoldQuote[] = [
-  { id: "gram", label: "Gram Altın", buying: 6740, selling: 6755, change: 0.35 },
   {
-    id: "ceyrek",
-    label: "Çeyrek Altın",
-    buying: 10820,
-    selling: 11080,
+    id: "has",
+    label: "Has Altın (24 Ayar)",
+    buying: 6710,
+    selling: 6740,
+    change: 0.2,
+  },
+  {
+    id: "ayar22",
+    label: "22 Ayar Altın",
+    buying: 6120,
+    selling: 6180,
+    change: 0.15,
+  },
+  {
+    id: "ceyrek_yeni",
+    label: "Yeni Çeyrek",
+    buying: 10890,
+    selling: 11020,
+    change: 0.1,
+  },
+  {
+    id: "ceyrek_eski",
+    label: "Eski Çeyrek",
+    buying: 10720,
+    selling: 10820,
+    change: 0.08,
+  },
+  {
+    id: "yarim_yeni",
+    label: "Yeni Yarım",
+    buying: 21800,
+    selling: 22030,
+    change: 0.1,
+  },
+  {
+    id: "yarim_eski",
+    label: "Eski Yarım",
+    buying: 21440,
+    selling: 21610,
+    change: 0.08,
+  },
+  {
+    id: "tam_yeni",
+    label: "Yeni Tam",
+    buying: 43400,
+    selling: 43920,
     change: 0.12,
   },
   {
-    id: "yarim",
-    label: "Yarım Altın",
-    buying: 21580,
-    selling: 22150,
-    change: -0.08,
+    id: "tam_eski",
+    label: "Eski Tam",
+    buying: 42890,
+    selling: 43280,
+    change: 0.1,
   },
-  { id: "tam", label: "Tam Altın", buying: 43300, selling: 44180, change: 0.2 },
+  {
+    id: "ata",
+    label: "Ata Lira",
+    buying: 44390,
+    selling: 45520,
+    change: 0.05,
+  },
+  {
+    id: "gremse",
+    label: "Gremse",
+    buying: 107600,
+    selling: 110100,
+    change: 0.05,
+  },
+];
+
+export const MOCK_FX_QUOTES: FxQuote[] = [
+  { id: "ons", code: "ONS", buying: 4082.5, selling: 4084.0 },
+  { id: "usd", code: "USD", buying: 42.85, selling: 42.95 },
+  { id: "eur", code: "EUR", buying: 46.1, selling: 46.35 },
 ];
 
 type HaremRow = {
@@ -78,7 +219,9 @@ function changeFromRow(row: HaremRow, previousSelling?: number): number {
     previousSelling > 0 &&
     selling !== previousSelling
   ) {
-    return Number((((selling - previousSelling) / previousSelling) * 100).toFixed(2));
+    return Number(
+      (((selling - previousSelling) / previousSelling) * 100).toFixed(2)
+    );
   }
 
   if (dir === "up") return 0.01;
@@ -106,34 +249,69 @@ export function parseHaremGoldQuotes(
   previousQuotes?: GoldQuote[]
 ): GoldQuote[] {
   const prevMap = new Map(previousQuotes?.map((q) => [q.id, q.selling]));
+  const quotes: GoldQuote[] = [];
 
-  return HAREM_GOLD_ITEMS.map(({ keys, label, id }) => {
+  for (const { keys, label, id, required = true } of HAREM_GOLD_ITEMS) {
     const row = pickRow(data, keys);
     if (!row) {
-      throw new Error(`Eksik Harem verisi: ${keys.join("|")}`);
+      if (required) {
+        throw new Error(`Eksik Harem verisi: ${keys.join("|")}`);
+      }
+      continue;
     }
 
     const buying = toNumber(row.alis ?? row.buying);
     const selling = toNumber(row.satis ?? row.selling);
 
     if (buying == null || selling == null) {
-      throw new Error(`Geçersiz Harem fiyatı: ${keys[0]}`);
+      if (required) {
+        throw new Error(`Geçersiz Harem fiyatı: ${keys[0]}`);
+      }
+      continue;
     }
 
-    return {
+    quotes.push({
       id,
       label,
       buying,
       selling,
       change: changeFromRow(row, prevMap.get(id)),
-    };
-  });
+    });
+  }
+
+  if (quotes.length < 4) {
+    throw new Error("Yetersiz Harem fiyat listesi");
+  }
+
+  return quotes;
 }
+
+/** USDTRY / EURTRY / ONS — eksik olanlar atlanır */
+export const parseHaremFxQuotes = (
+  data: Record<string, unknown>
+): FxQuote[] => {
+  const fx: FxQuote[] = [];
+
+  for (const { keys, id, code } of HAREM_FX_ITEMS) {
+    const row = pickRow(data, keys);
+    if (!row) continue;
+
+    const buying = toNumber(row.alis ?? row.buying);
+    const selling = toNumber(row.satis ?? row.selling);
+    if (buying == null || selling == null) continue;
+
+    fx.push({ id, code, buying, selling });
+  }
+
+  // Hiçbiri yoksa mock ile TV header boş kalmasın
+  return fx.length > 0 ? fx : [...MOCK_FX_QUOTES];
+};
 
 export function getMockGoldResponse(): GoldApiResponse {
   return {
     source: "fallback",
     updatedAt: new Date().toLocaleString("tr-TR"),
     quotes: MOCK_GOLD_QUOTES,
+    fx: MOCK_FX_QUOTES,
   };
 }

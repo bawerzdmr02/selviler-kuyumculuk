@@ -23,6 +23,12 @@
       "name": "Zincirler",
       "slug": "zincirler",
       "description": "İtalyan ve klasik örgü saf altın zincirler."
+    },
+    {
+      "id": "yuzukler",
+      "name": "Yüzükler",
+      "slug": "yuzukler",
+      "description": "22 ve 14 ayar saf altın alyans ve yüzük modelleri."
     }
   ],
   "products": [
@@ -33,7 +39,11 @@
       "categoryId": "bilezik",
       "featured": true,
       "shortDescription": "Klasik Adana burma modeli — 22 ayar saf altın bilezik.",
-      "image": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80"
+      "image": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80",
+      "imageHover": "https://images.unsplash.com/photo-1709295208567-ce817387e977?auto=format&fit=crop&w=1200&q=80",
+      "price": 48500,
+      "color": "sari",
+      "karat": 22
     },
     {
       "id": "sk-002",
@@ -42,7 +52,11 @@
       "categoryId": "bilezik",
       "featured": false,
       "shortDescription": "Ajda kesim detaylı 22 ayar altın bilezik.",
-      "image": "https://images.unsplash.com/photo-1709295208567-ce817387e977?auto=format&fit=crop&w=1200&q=80"
+      "image": "https://images.unsplash.com/photo-1709295208567-ce817387e977?auto=format&fit=crop&w=1200&q=80",
+      "imageHover": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80",
+      "price": 52200,
+      "color": "sari",
+      "karat": 22
     },
     {
       "id": "sk-003",
@@ -51,7 +65,34 @@
       "categoryId": "bilezik",
       "featured": false,
       "shortDescription": "Dorika toplarla bezeli tam altın bileklik.",
-      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=80"
+      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=80",
+      "price": 39800,
+      "color": "sari",
+      "karat": 22
+    },
+    {
+      "id": "sk-016",
+      "name": "14 Ayar İnce Burma Bilezik",
+      "slug": "14-ayar-ince-burma-bilezik",
+      "categoryId": "bilezik",
+      "featured": false,
+      "shortDescription": "Hafif ve zarif 14 ayar saf altın burma bilezik.",
+      "image": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80&sat=-15",
+      "price": 27600,
+      "color": "sari",
+      "karat": 14
+    },
+    {
+      "id": "sk-017",
+      "name": "22 Ayar Rose Altın Bilezik",
+      "slug": "22-ayar-rose-altin-bilezik",
+      "categoryId": "bilezik",
+      "featured": false,
+      "shortDescription": "Sıcak tonlu rose altın bilezik modeli.",
+      "image": "https://images.unsplash.com/photo-1709295208567-ce817387e977?auto=format&fit=crop&w=1200&q=80&sat=20",
+      "price": 54800,
+      "color": "rose",
+      "karat": 22
     },
     {
       "id": "sk-004",
@@ -60,7 +101,11 @@
       "categoryId": "kupe",
       "featured": true,
       "shortDescription": "Klasik halka formunda 22 ayar saf altın küpe.",
-      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=80"
+      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=80",
+      "imageHover": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80",
+      "price": 18900,
+      "color": "sari",
+      "karat": 22
     },
     {
       "id": "sk-005",
@@ -69,7 +114,10 @@
       "categoryId": "kupe",
       "featured": false,
       "shortDescription": "Zarif sallantılı 14 ayar altın küpe çifti.",
-      "image": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80"
+      "image": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80",
+      "price": 12450,
+      "color": "sari",
+      "karat": 14
     },
     {
       "id": "sk-006",
@@ -78,7 +126,34 @@
       "categoryId": "kupe",
       "featured": false,
       "shortDescription": "Günlük kullanım için ince halka 14 ayar altın küpe.",
-      "image": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1200&q=80"
+      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=80&sat=-10",
+      "price": 9800,
+      "color": "sari",
+      "karat": 14
+    },
+    {
+      "id": "sk-018",
+      "name": "22 Ayar Beyaz Altın Halka Küpe",
+      "slug": "22-ayar-beyaz-altin-halka-kupe",
+      "categoryId": "kupe",
+      "featured": false,
+      "shortDescription": "Modern beyaz altın halka küpe.",
+      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=80&sat=-40",
+      "price": 21400,
+      "color": "beyaz",
+      "karat": 22
+    },
+    {
+      "id": "sk-019",
+      "name": "14 Ayar Rose Altın Küpe",
+      "slug": "14-ayar-rose-altin-kupe",
+      "categoryId": "kupe",
+      "featured": false,
+      "shortDescription": "Zarif rose tonlu 14 ayar altın küpe.",
+      "image": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80&sat=25",
+      "price": 14200,
+      "color": "rose",
+      "karat": 14
     },
     {
       "id": "sk-007",
@@ -87,7 +162,11 @@
       "categoryId": "kolye",
       "featured": true,
       "shortDescription": "İtalyan işçiliğiyle üretilmiş 14 ayar altın kolye.",
-      "image": "https://images.unsplash.com/photo-1677144198413-f8bfe1f9a1aa?auto=format&fit=crop&w=1200&q=80"
+      "image": "https://images.unsplash.com/photo-1677144198413-f8bfe1f9a1aa?auto=format&fit=crop&w=1200&q=80",
+      "imageHover": "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=1200&q=80",
+      "price": 24600,
+      "color": "sari",
+      "karat": 14
     },
     {
       "id": "sk-008",
@@ -96,34 +175,10 @@
       "categoryId": "kolye",
       "featured": false,
       "shortDescription": "Halat örgülü 22 ayar saf altın kolye.",
-      "image": "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "id": "sk-009",
-      "name": "14 Ayar Figaro Zincir",
-      "slug": "14-ayar-figaro-zincir",
-      "categoryId": "zincir",
-      "featured": true,
-      "shortDescription": "Figaro örgü 14 ayar saf altın zincir.",
-      "image": "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "id": "sk-010",
-      "name": "22 Ayar Singapur Zincir",
-      "slug": "22-ayar-singapur-zincir",
-      "categoryId": "zincir",
-      "featured": false,
-      "shortDescription": "Parlak Singapur örgü 22 ayar altın zincir.",
-      "image": "https://images.unsplash.com/photo-1677144198413-f8bfe1f9a1aa?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "id": "sk-011",
-      "name": "14 Ayar İki Sıra Zincir",
-      "slug": "14-ayar-iki-sira-zincir",
-      "categoryId": "zincir",
-      "featured": false,
-      "shortDescription": "Katmanlanabilir iki sıra 14 ayar altın zincir.",
-      "image": "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=1200&q=80"
+      "image": "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=1200&q=80",
+      "price": 61200,
+      "color": "sari",
+      "karat": 22
     },
     {
       "id": "sk-012",
@@ -132,7 +187,156 @@
       "categoryId": "kolye",
       "featured": false,
       "shortDescription": "Gourmet örgü 14 ayar saf altın kolye.",
-      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=80"
+      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=80",
+      "price": 19850,
+      "color": "sari",
+      "karat": 14
+    },
+    {
+      "id": "sk-020",
+      "name": "22 Ayar Has Altın Kolye",
+      "slug": "22-ayar-has-altin-kolye",
+      "categoryId": "kolye",
+      "featured": false,
+      "shortDescription": "Yatırımlık has altın kolye modeli.",
+      "image": "https://images.unsplash.com/photo-1677144198413-f8bfe1f9a1aa?auto=format&fit=crop&w=1200&q=80&sat=-5",
+      "price": 73500,
+      "color": "sari",
+      "karat": 24
+    },
+    {
+      "id": "sk-021",
+      "name": "14 Ayar Rose Zincir Kolye",
+      "slug": "14-ayar-rose-zincir-kolye",
+      "categoryId": "kolye",
+      "featured": false,
+      "shortDescription": "Rose altın zincir kolye — günlük şıklık.",
+      "image": "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=1200&q=80&sat=30",
+      "price": 22100,
+      "color": "rose",
+      "karat": 14
+    },
+    {
+      "id": "sk-009",
+      "name": "14 Ayar Figaro Zincir",
+      "slug": "14-ayar-figaro-zincir",
+      "categoryId": "zincir",
+      "featured": true,
+      "shortDescription": "Figaro örgü 14 ayar saf altın zincir.",
+      "image": "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=1200&q=80",
+      "imageHover": "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=1200&q=80",
+      "price": 16750,
+      "color": "sari",
+      "karat": 14
+    },
+    {
+      "id": "sk-010",
+      "name": "22 Ayar Singapur Zincir",
+      "slug": "22-ayar-singapur-zincir",
+      "categoryId": "zincir",
+      "featured": false,
+      "shortDescription": "Parlak Singapur örgü 22 ayar altın zincir.",
+      "image": "https://images.unsplash.com/photo-1677144198413-f8bfe1f9a1aa?auto=format&fit=crop&w=1200&q=80",
+      "price": 42900,
+      "color": "sari",
+      "karat": 22
+    },
+    {
+      "id": "sk-011",
+      "name": "14 Ayar İki Sıra Zincir",
+      "slug": "14-ayar-iki-sira-zincir",
+      "categoryId": "zincir",
+      "featured": false,
+      "shortDescription": "Katmanlanabilir iki sıra 14 ayar altın zincir.",
+      "image": "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=1200&q=80",
+      "price": 20300,
+      "color": "sari",
+      "karat": 14
+    },
+    {
+      "id": "sk-022",
+      "name": "22 Ayar Beyaz Altın Zincir",
+      "slug": "22-ayar-beyaz-altin-zincir",
+      "categoryId": "zincir",
+      "featured": false,
+      "shortDescription": "Parlak beyaz altın zincir modeli.",
+      "image": "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=1200&q=80&sat=-35",
+      "price": 45600,
+      "color": "beyaz",
+      "karat": 22
+    },
+    {
+      "id": "sk-023",
+      "name": "14 Ayar Rose Figaro Zincir",
+      "slug": "14-ayar-rose-figaro-zincir",
+      "categoryId": "zincir",
+      "featured": false,
+      "shortDescription": "Rose tonlu figaro örgü altın zincir.",
+      "image": "https://images.unsplash.com/photo-1677144198413-f8bfe1f9a1aa?auto=format&fit=crop&w=1200&q=80&sat=25",
+      "price": 18400,
+      "color": "rose",
+      "karat": 14
+    },
+    {
+      "id": "sk-013",
+      "name": "22 Ayar Altın Alyans",
+      "slug": "22-ayar-altin-alyans",
+      "categoryId": "yuzukler",
+      "featured": true,
+      "shortDescription": "Klasik bombeli formda 22 ayar saf altın alyans.",
+      "image": "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80",
+      "imageHover": "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80&sat=-15",
+      "price": 15800,
+      "color": "sari",
+      "karat": 22
+    },
+    {
+      "id": "sk-014",
+      "name": "14 Ayar İnce Altın Yüzük",
+      "slug": "14-ayar-ince-altin-yuzuk",
+      "categoryId": "yuzukler",
+      "featured": false,
+      "shortDescription": "Günlük kullanım için ince profil 14 ayar saf altın yüzük.",
+      "image": "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80&sat=-10",
+      "price": 9200,
+      "color": "sari",
+      "karat": 14
+    },
+    {
+      "id": "sk-015",
+      "name": "22 Ayar Klasik Altın Yüzük",
+      "slug": "22-ayar-klasik-altin-yuzuk",
+      "categoryId": "yuzukler",
+      "featured": false,
+      "shortDescription": "Zamansız formda 22 ayar saf altın yüzük.",
+      "image": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80",
+      "price": 18600,
+      "color": "sari",
+      "karat": 22
+    },
+    {
+      "id": "sk-024",
+      "name": "14 Ayar Rose Altın Alyans",
+      "slug": "14-ayar-rose-altin-alyans",
+      "categoryId": "yuzukler",
+      "featured": false,
+      "shortDescription": "Sıcak rose tonlu 14 ayar altın alyans.",
+      "image": "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80&sat=35",
+      "price": 11200,
+      "color": "rose",
+      "karat": 14
+    },
+    {
+      "id": "sk-025",
+      "name": "24 Ayar Has Altın Yüzük",
+      "slug": "24-ayar-has-altin-yuzuk",
+      "categoryId": "yuzukler",
+      "featured": false,
+      "shortDescription": "Yatırımlık 24 ayar has altın yüzük.",
+      "image": "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80&sat=10",
+      "price": 26400,
+      "color": "sari",
+      "karat": 24
     }
   ]
 }

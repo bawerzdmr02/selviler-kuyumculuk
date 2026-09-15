@@ -121,13 +121,13 @@
 
 ## 6. Google İşletme Profili
 
-- [ ] business.google.com üzerinden işletme kaydı oluştur
-- [ ] Kategori seç: "Kuyumcu" / "Mücevherci"
-- [ ] Adres doğrulama sürecini başlat (posta kartı veya telefon/video doğrulama — süre alabileceğinden **en erken günlerde** başlat)
-- [ ] Çalışma saatlerini, telefon numarasını, web sitesi linkini gir
-- [ ] Mağaza dışı/içi profesyonel fotoğraflar yükle (min. 10-15 görsel)
-- [ ] Google Haritalar konumunu doğru pin'le ve web sitesindeki iframe ile eşleştir
-- [ ] Açılışta ilk yorumları teşvik etmek için bir plan not et
+- [x] business.google.com üzerinden işletme kaydı oluştur
+- [x] Kategori seç: "Kuyumcu" / "Mücevherci"
+- [x] Adres doğrulama sürecini başlat (posta kartı veya telefon/video doğrulama — süre alabileceğinden **en erken günlerde** başlat)
+- [x] Çalışma saatlerini, telefon numarasını, web sitesi linkini gir
+- [x] Mağaza dışı/içi profesyonel fotoğraflar yükle (min. 10-15 görsel)
+- [x] Google Haritalar konumunu doğru pin'le ve web sitesindeki iframe ile eşleştir
+- [x] Açılışta ilk yorumları teşvik etmek için bir plan not et
 
 ## 7. Alan Adı (Domain) ve DNS
 
