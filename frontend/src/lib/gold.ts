@@ -30,12 +30,23 @@ export type HaremGoldItem = {
 };
 
 /**
- * Harem Altın / Kapalıçarşı — TV + API tam liste
- * (eski/yeni sarrafiye + has + 22 ayar + ata + gremse)
+ * Harem Altın / Kapalıçarşı — TV panosu sırası (16 kalem).
+ *
+ * Ticari kullanım notu: `required: false` olan kalemler Harem yayınında
+ * yoksa satır hiç gösterilmez. Bir kaleme yaklaşık/benzer bir Harem kodu
+ * eşlenmez — yanlış fiyat göstermek, göstermemekten daha risklidir.
  */
 export const HAREM_GOLD_ITEMS: HaremGoldItem[] = [
-  { keys: ["ALTIN"], label: "Has Altın (24 Ayar)", id: "has", required: true },
-  { keys: ["AYAR22"], label: "22 Ayar Altın", id: "ayar22", required: true },
+  { keys: ["ALTIN"], label: "Has Altın", id: "has", required: true },
+  { keys: ["AYAR22"], label: "22 Ayar", id: "ayar22", required: true },
+  {
+    // Harem'de ayrı bir "gram altın" kodu yok; gram bazlı 24 ayar ikinci
+    // kalem KULCEALTIN'dır (ALTIN = Has Altın satırı).
+    keys: ["KULCEALTIN"],
+    label: "Gram Altın",
+    id: "gram",
+    required: true,
+  },
   {
     keys: ["CEYREK_YENI"],
     label: "Yeni Çeyrek",
@@ -73,16 +84,46 @@ export const HAREM_GOLD_ITEMS: HaremGoldItem[] = [
     required: true,
   },
   {
-    keys: ["ATA_YENI", "ATAALTIN", "CUMHURIYETALTINI"],
-    label: "Ata Lira",
-    id: "ata",
+    keys: ["ATA_YENI"],
+    label: "Yeni Ata",
+    id: "ata_yeni",
     required: true,
   },
   {
-    keys: ["GREMESE_YENI", "GREMESE_ESKI", "GREMSEALTIN"],
-    label: "Gremse",
-    id: "gremse",
-    required: false,
+    keys: ["ATA_ESKI"],
+    label: "Eski Ata",
+    id: "ata_eski",
+    required: true,
+  },
+  {
+    keys: ["ATA5_YENI"],
+    label: "Yeni Ata5",
+    id: "ata5_yeni",
+    required: true,
+  },
+  {
+    keys: ["ATA5_ESKI"],
+    label: "Eski Ata5",
+    id: "ata5_eski",
+    required: true,
+  },
+  {
+    keys: ["GREMESE_YENI"],
+    label: "Yeni Gremse",
+    id: "gremse_yeni",
+    required: true,
+  },
+  {
+    keys: ["GREMESE_ESKI"],
+    label: "Eski Gremse",
+    id: "gremse_eski",
+    required: true,
+  },
+  {
+    keys: ["AYAR14"],
+    label: "14 Ayar",
+    id: "ayar14",
+    required: true,
   },
 ];
 
@@ -108,17 +149,24 @@ export const HAREM_HOME_QUOTE_IDS = [
 export const MOCK_GOLD_QUOTES: GoldQuote[] = [
   {
     id: "has",
-    label: "Has Altın (24 Ayar)",
+    label: "Has Altın",
     buying: 6710,
     selling: 6740,
     change: 0.2,
   },
   {
     id: "ayar22",
-    label: "22 Ayar Altın",
+    label: "22 Ayar",
     buying: 6120,
     selling: 6180,
     change: 0.15,
+  },
+  {
+    id: "gram",
+    label: "Gram Altın",
+    buying: 6705,
+    selling: 6735,
+    change: 0.18,
   },
   {
     id: "ceyrek_yeni",
@@ -163,18 +211,53 @@ export const MOCK_GOLD_QUOTES: GoldQuote[] = [
     change: 0.1,
   },
   {
-    id: "ata",
-    label: "Ata Lira",
+    id: "ata_yeni",
+    label: "Yeni Ata",
     buying: 44390,
     selling: 45520,
     change: 0.05,
   },
   {
-    id: "gremse",
-    label: "Gremse",
+    id: "ata_eski",
+    label: "Eski Ata",
+    buying: 43980,
+    selling: 45010,
+    change: 0.04,
+  },
+  {
+    id: "ata5_yeni",
+    label: "Yeni Ata5",
+    buying: 221900,
+    selling: 227600,
+    change: 0.05,
+  },
+  {
+    id: "ata5_eski",
+    label: "Eski Ata5",
+    buying: 219800,
+    selling: 225000,
+    change: 0.04,
+  },
+  {
+    id: "gremse_yeni",
+    label: "Yeni Gremse",
     buying: 107600,
     selling: 110100,
     change: 0.05,
+  },
+  {
+    id: "gremse_eski",
+    label: "Eski Gremse",
+    buying: 106400,
+    selling: 108900,
+    change: 0.04,
+  },
+  {
+    id: "ayar14",
+    label: "14 Ayar",
+    buying: 3910,
+    selling: 4040,
+    change: 0.12,
   },
 ];
 

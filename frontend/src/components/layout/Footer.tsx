@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Camera, Phone, ShieldCheck, Lock, CreditCard } from "lucide-react";
+import { Camera, MessageCircle, Phone, ShieldCheck, Lock, CreditCard } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 
 export function Footer() {
@@ -89,6 +89,17 @@ export function Footer() {
                 >
                   <Camera size={14} aria-hidden className="text-gold" />
                   Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href={siteConfig.contact.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-gold"
+                >
+                  <MessageCircle size={14} aria-hidden className="text-gold" />
+                  WhatsApp
                 </a>
               </li>
             </ul>

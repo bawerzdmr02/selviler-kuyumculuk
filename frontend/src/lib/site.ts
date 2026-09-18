@@ -48,7 +48,7 @@ export const siteConfig = {
     ],
   },
   social: {
-    instagram: "https://instagram.com/",
+    instagram: "https://www.instagram.com/selvilerkuyumculuk",
     facebook: "https://facebook.com/",
   },
   /** Ana kategoriler: Bilezikler, Küpeler, Kolyeler, Zincirler, Yüzükler */
