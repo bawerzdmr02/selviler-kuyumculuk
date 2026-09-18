@@ -72,22 +72,22 @@ export function ProductDetailView({
 
         {/* ESA: sol galeri+özellikler · sağ satın alma
             Mobil sıra: galeri → satın alma → maddeler */}
-        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-x-12 lg:gap-y-10">
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:gap-x-12 lg:gap-y-10">
           {/* Galeri */}
           <div>
-            <div className="relative aspect-[4/5] overflow-hidden bg-white sm:aspect-[3/4]">
+            <div className="relative aspect-[4/5] overflow-hidden bg-white sm:aspect-[3/4] lg:aspect-[4/5] lg:max-w-[420px]">
               <Image
                 src={gallery[activeImage] ?? product.image}
                 alt={product.name}
                 fill
                 priority
-                sizes="(max-width: 1024px) 100vw, 55vw"
+                sizes="(max-width: 1024px) 100vw, 420px"
                 className="object-cover"
               />
             </div>
 
             {gallery.length > 1 && (
-              <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+              <div className="mt-3 flex gap-2 overflow-x-auto pb-1 lg:max-w-[420px]">
                 {gallery.map((src, i) => (
                   <button
                     key={`${src}-${i}`}
