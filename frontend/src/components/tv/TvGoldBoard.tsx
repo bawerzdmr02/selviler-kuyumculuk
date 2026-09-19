@@ -198,8 +198,9 @@ export function TvGoldBoard() {
     <div className="tv-board fixed inset-0 z-[200] flex h-screen w-screen flex-col overflow-hidden bg-[#E9EEF6] text-slate-800">
       <div className="oled-float flex h-full w-full flex-col">
         {/* —— Üst Bar: marka + döviz —— */}
+        {/* —— Üst Bar: marka + döviz —— */}
         <header className="flex h-[10vh] shrink-0 items-stretch gap-[0.8vw] px-[0.8vw] pt-[0.8vh]">
-          <div className="flex items-center justify-center rounded-br-2xl bg-gradient-to-r from-blue-950 to-blue-700 px-[2vw] py-[1.5vh]">
+          <div className="flex shrink-0 items-center justify-center rounded-br-2xl bg-gradient-to-r from-blue-950 to-blue-700 px-[2vw] py-[1.5vh]">
             <h1
               className="whitespace-nowrap font-sans text-[1.7vw] font-black tracking-[0.2em] text-white drop-shadow-lg"
               style={{ color: "#ffffff" }}
@@ -224,26 +225,26 @@ export function TvGoldBoard() {
                   key={item.id}
                   className="flex items-baseline gap-[0.5vw] whitespace-nowrap"
                 >
-                  <span className={`text-[1.1vw] font-extrabold ${labelClass}`}>
+                  <span className={`text-[1.3vw] font-extrabold ${labelClass}`}>
                     {item.code}
                   </span>
                   <FlashNum
                     value={item.buying}
-                    className={`text-[0.9vw] font-semibold ${buyClass}`}
+                    className={`text-[1.1vw] font-semibold ${buyClass}`}
                     format={fmt}
                   />
-                  <span className="text-[0.9vw] font-semibold text-gray-400 opacity-50">
+                  <span className="text-[1.1vw] font-semibold text-gray-400 opacity-50">
                     /
                   </span>
                   <FlashNum
                     value={item.selling}
-                    className={`text-[0.9vw] font-semibold ${sellClass}`}
+                    className={`text-[1.1vw] font-semibold ${sellClass}`}
                     format={fmt}
                   />
                 </div>
               );
             })}
-            <span className="text-[0.85vw] font-bold tabular-nums text-slate-500">
+            <span className="text-[1.1vw] font-bold tabular-nums text-slate-500">
               {clock}
             </span>
           </div>
