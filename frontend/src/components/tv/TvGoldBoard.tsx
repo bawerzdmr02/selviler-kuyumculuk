@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import { WifiOff } from "lucide-react";
 import {
   HAREM_GOLD_ITEMS,
-  MOCK_FX_QUOTES,
-  type FxQuote,
   type GoldApiResponse,
   type GoldQuote,
 } from "@/lib/gold";
@@ -20,20 +18,6 @@ function formatTry(value: number): string {
     style: "currency",
     currency: "TRY",
     maximumFractionDigits: 2,
-  }).format(value);
-}
-
-function formatOns(value: number): string {
-  return `${new Intl.NumberFormat("tr-TR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value)} $`;
-}
-
-function formatFx(value: number): string {
-  return new Intl.NumberFormat("tr-TR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 4,
   }).format(value);
 }
 
@@ -77,10 +61,6 @@ function FlashNum({
   );
 }
 
-function fxTone(code: FxQuote["code"]): "red" | "blue" {
-  return code === "USD" ? "red" : "blue";
-}
-
 function isLivePayload(data: GoldApiResponse): boolean {
   return (
     data.source === "live" &&
@@ -91,7 +71,6 @@ function isLivePayload(data: GoldApiResponse): boolean {
 
 export function TvGoldBoard() {
   const [quotes, setQuotes] = useState<GoldQuote[] | null>(null);
-  const [fx, setFx] = useState<FxQuote[]>(MOCK_FX_QUOTES);
   const [isError, setIsError] = useState(false);
   const [clock, setClock] = useState<string>("");
   const inFlightRef = useRef(false);
@@ -143,9 +122,6 @@ export function TvGoldBoard() {
         }
 
         setQuotes(data.quotes);
-        if (Array.isArray(data.fx) && data.fx.length > 0) {
-          setFx(data.fx);
-        }
         setIsError(false);
       } catch (err) {
         if (cancelled) return;
@@ -197,57 +173,17 @@ export function TvGoldBoard() {
   return (
     <div className="tv-board fixed inset-0 z-[200] flex h-screen w-screen flex-col overflow-hidden bg-[#E9EEF6] text-slate-800">
       <div className="oled-float flex h-full w-full flex-col">
-        {/* —— Üst Bar: marka + döviz —— */}
-        {/* —— Üst Bar: marka + döviz —— */}
-        <header className="flex h-[10vh] shrink-0 items-stretch gap-[0.8vw] px-[0.8vw] pt-[0.8vh]">
-          <div className="flex shrink-0 items-center justify-center rounded-br-2xl bg-gradient-to-r from-blue-950 to-blue-700 px-[2vw] py-[1.5vh]">
-            <h1
-              className="whitespace-nowrap font-sans text-[1.7vw] font-black tracking-[0.2em] text-white drop-shadow-lg"
-              style={{ color: "#ffffff" }}
-            >
-              SELVİLER KUYUMCULUK
-            </h1>
-          </div>
-
-          <div className="flex min-w-0 flex-1 items-center justify-end gap-[1.6vw] rounded-sm bg-white/70 px-[1.5vw]">
-            {fx.map((item) => {
-              const tone = fxTone(item.code);
-              const labelClass =
-                tone === "red" ? "text-red-500" : "text-blue-600";
-              const buyClass =
-                tone === "red" ? "text-red-500" : "text-sky-600";
-              const sellClass =
-                tone === "red" ? "text-red-600" : "text-blue-600";
-              const fmt = item.code === "ONS" ? formatOns : formatFx;
-
-              return (
-                <div
-                  key={item.id}
-                  className="flex items-baseline gap-[0.5vw] whitespace-nowrap"
-                >
-                  <span className={`text-[1.3vw] font-extrabold ${labelClass}`}>
-                    {item.code}
-                  </span>
-                  <FlashNum
-                    value={item.buying}
-                    className={`text-[1.1vw] font-semibold ${buyClass}`}
-                    format={fmt}
-                  />
-                  <span className="text-[1.1vw] font-semibold text-gray-400 opacity-50">
-                    /
-                  </span>
-                  <FlashNum
-                    value={item.selling}
-                    className={`text-[1.1vw] font-semibold ${sellClass}`}
-                    format={fmt}
-                  />
-                </div>
-              );
-            })}
-            <span className="text-[1.1vw] font-bold tabular-nums text-slate-500">
-              {clock}
-            </span>
-          </div>
+        {/* —— Üst Bar: tam genişlik marka —— */}
+        <header className="relative w-full shrink-0 bg-gradient-to-r from-blue-950 to-blue-700 px-4 py-6 sm:py-7">
+          <h1
+            className="flex items-center justify-center text-center font-sans text-5xl font-extrabold tracking-[0.18em] text-white drop-shadow-lg sm:text-6xl"
+            style={{ color: "#ffffff" }}
+          >
+            SELVİLER KUYUMCULUK
+          </h1>
+          <span className="absolute right-4 top-1/2 -translate-y-1/2 font-sans text-sm font-semibold tabular-nums tracking-wide text-white/80 sm:text-base">
+            {clock}
+          </span>
         </header>
 
         {/* —— Tam genişlik fiyat tablosu —— */}

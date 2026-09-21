@@ -133,69 +133,69 @@
 
 ## 7. Alan Adı (Domain) ve DNS
 
-- [ ] Alan adını satın al (`.com` veya `.com.tr` — `.com.tr` için ticari sicil/vergi levhası gerekebilir, süreyi buna göre planla)
-- [ ] Domain sağlayıcısında DNS yönetim paneline eriş
-- [ ] **A kaydı** oluştur: `@` → VPS'in statik IP adresi
-- [ ] **A kaydı** (veya CNAME): `www` → aynı IP / kök domain
-- [ ] TTL değerini düşür (ör. 300 sn) ki değişiklikler hızlı yayılsın, canlıya almadan önce düşür sonra normale çek
-- [ ] DNS yayılımını `dig` / `nslookup` veya whatsmydns.net ile doğrula
+- [x] Alan adını satın al (`.com` veya `.com.tr` — `.com.tr` için ticari sicil/vergi levhası gerekebilir, süreyi buna göre planla)
+- [x] Domain sağlayıcısında DNS yönetim paneline eriş
+- [x] **A kaydı** oluştur: `@` → VPS'in statik IP adresi
+- [x] **A kaydı** (veya CNAME): `www` → aynı IP / kök domain
+- [x] TTL değerini düşür (ör. 300 sn) ki değişiklikler hızlı yayılsın, canlıya almadan önce düşür sonra normale çek
+- [x] DNS yayılımını `dig` / `nslookup` veya whatsmydns.net ile doğrula
 
 ## 8. VPS Sunucu İlk Kurulumu ve Güvenliği
 
-- [ ] Ubuntu 24.04 LTS VPS kirala (RAM/CPU: en az 2 vCPU / 4GB RAM — Faz 2'de DB de aynı sunucuda barınacağı için baştan yeterli kapasite seç)
-- [ ] `ssh root@IP` ile ilk bağlantı, sistem güncelle:
+- [x] Ubuntu 24.04 LTS VPS kirala (RAM/CPU: en az 2 vCPU / 4GB RAM — Faz 2'de DB de aynı sunucuda barınacağı için baştan yeterli kapasite seç)
+- [x] `ssh root@IP` ile ilk bağlantı, sistem güncelle:
   ```bash
   apt update && apt upgrade -y
   ```
-- [ ] Yeni sudo kullanıcı oluştur (root ile çalışmayı bırak):
+- [x] Yeni sudo kullanıcı oluştur (root ile çalışmayı bırak):
   ```bash
   adduser deploy
   usermod -aG sudo deploy
   ```
-- [ ] Yerel makineden SSH key üret ve sunucuya kopyala (`ssh-copy-id deploy@IP`)
-- [ ] `/etc/ssh/sshd_config` içinde:
+- [x] Yerel makineden SSH key üret ve sunucuya kopyala (`ssh-copy-id deploy@IP`)
+- [x] `/etc/ssh/sshd_config` içinde:
   - `PasswordAuthentication no`
   - `PermitRootLogin no`
   - SSH portunu değiştirmeyi değerlendir (opsiyonel ek güvenlik katmanı)
-- [ ] SSH servisini yeniden başlat, **root oturumunu kapatmadan önce** yeni kullanıcı ile bağlanabildiğini doğrula
-- [ ] UFW (firewall) kur ve yapılandır:
+- [x] SSH servisini yeniden başlat, **root oturumunu kapatmadan önce** yeni kullanıcı ile bağlanabildiğini doğrula
+- [x] UFW (firewall) kur ve yapılandır:
   ```bash
   ufw allow OpenSSH
   ufw allow 'Nginx Full'
   ufw enable
   ```
-- [ ] `fail2ban` kur (brute-force SSH denemelerine karşı):
+- [x] `fail2ban` kur (brute-force SSH denemelerine karşı):
   ```bash
   apt install fail2ban -y
   ```
-- [ ] Sunucu saat dilimini ayarla: `timedatectl set-timezone Europe/Istanbul`
-- [ ] Küçük/orta VPS'lerde swap alanı oluştur (build sırasında RAM yetersizliğine karşı):
+- [x] Sunucu saat dilimini ayarla: `timedatectl set-timezone Europe/Istanbul`
+- [x] Küçük/orta VPS'lerde swap alanı oluştur (build sırasında RAM yetersizliğine karşı):
   ```bash
   fallocate -l 2G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile
   ```
-- [ ] `unattended-upgrades` paketiyle otomatik güvenlik güncellemelerini aktif et
-- [ ] Sunucu için temel izleme kur (opsiyonel: `htop`, ileride Netdata)
+- [x] `unattended-upgrades` paketiyle otomatik güvenlik güncellemelerini aktif et
+- [x] Sunucu için temel izleme kur (opsiyonel: `htop`, ileride Netdata)
 
 ## 9. Node.js ve PM2 Kurulumu
 
-- [ ] Sunucuya `nvm` ile Node.js LTS kur (paket yöneticisinden değil — sürüm kontrolü için):
+- [x] Sunucuya `nvm` ile Node.js LTS kur (paket yöneticisinden değil — sürüm kontrolü için):
   ```bash
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
   nvm install --lts
   ```
-- [ ] PM2'yi global kur:
+- [x] PM2'yi global kur:
   ```bash
   npm install -g pm2
   ```
-- [ ] Projeyi sunucuya çek (`git clone` deploy kullanıcısı ile), `npm install`, `npm run build`
+- [x] Projeyi sunucuya çek (`git clone` deploy kullanıcısı ile), `npm install`, `npm run build`
 - [x] `ecosystem.config.js` dosyasını oluştur (uygulama adı, script: `npm start`, env değişkenleri, `instances`, `exec_mode: cluster` opsiyonu)
-- [ ] `pm2 start ecosystem.config.js` ile başlat
-- [ ] `pm2 startup` komutunu çalıştır ve çıktısındaki komutu uygula (sunucu yeniden başlasa bile PM2'nin otomatik ayağa kalkması için)
-- [ ] `pm2 save` ile mevcut process listesini kaydet
+- [x] `pm2 start ecosystem.config.js` ile başlat
+- [x] `pm2 startup` komutunu çalıştır ve çıktısındaki komutu uygula (sunucu yeniden başlasa bile PM2'nin otomatik ayağa kalkması için)
+- [x] `pm2 save` ile mevcut process listesini kaydet
 
 ## 10. Nginx Reverse Proxy Kurulumu
 
-- [ ] Nginx kur: `apt install nginx -y`
+- [x] Nginx kur: `apt install nginx -y`
 - [x] `/etc/nginx/sites-available/selviler` dosyasını oluştur, reverse proxy tanımla:
   ```nginx
   server {
@@ -217,43 +217,44 @@
   ```
 - [x] Gzip sıkıştırmasını `/etc/nginx/nginx.conf` içinde aktif et
 - [x] `client_max_body_size` değerini ileride görsel yüklemeleri düşünerek yükselt (ör. `20M`)
-- [ ] Sembolik link oluştur: `ln -s /etc/nginx/sites-available/selviler /etc/nginx/sites-enabled/`
-- [ ] Varsayılan Nginx sitesini devre dışı bırak: `rm /etc/nginx/sites-enabled/default`
-- [ ] Konfigürasyonu test et: `nginx -t`, sorun yoksa: `systemctl reload nginx`
+- [x] Sembolik link oluştur: `ln -s /etc/nginx/sites-available/selviler /etc/nginx/sites-enabled/`
+- [x] Varsayılan Nginx sitesini devre dışı bırak: `rm /etc/nginx/sites-enabled/default`
+- [x] Konfigürasyonu test et: `nginx -t`, sorun yoksa: `systemctl reload nginx`
 
 ## 11. SSL Sertifikası (Let's Encrypt)
 
-- [ ] Certbot kur:
+- [x] Certbot kur:
   ```bash
   apt install certbot python3-certbot-nginx -y
   ```
-- [ ] Sertifikayı al ve Nginx'e otomatik entegre et:
+- [x] Sertifikayı al ve Nginx'e otomatik entegre et:
   ```bash
   certbot --nginx -d selvilerkuyumculuk.com -d www.selvilerkuyumculuk.com
   ```
-- [ ] HTTP → HTTPS otomatik yönlendirmenin certbot tarafından eklendiğini doğrula
-- [ ] Otomatik yenilemeyi test et: `certbot renew --dry-run`
-- [ ] `systemctl status certbot.timer` ile yenileme zamanlayıcısının aktif olduğunu doğrula
+- [x] HTTP → HTTPS otomatik yönlendirmenin certbot tarafından eklendiğini doğrula
+- [x] Otomatik yenilemeyi test et: `certbot renew --dry-run`
+- [x] `systemctl status certbot.timer` ile yenileme zamanlayıcısının aktif olduğunu doğrula
 - [ ] SSL Labs (ssllabs.com/ssltest) üzerinden A/A+ notu al
 
 ## 12. Canlıya Alma, Test ve Açılış Kontrolü
 
-- [ ] Tarayıcıdan `https://` ile siteyi aç, tüm sayfaları gez
-- [ ] Mobil cihazlarda gerçek test (iOS Safari + Android Chrome)
-- [ ] PageSpeed Insights / GTmetrix ile performans testi
-- [ ] Tüm formların (iletişim) çalıştığını doğrula, e-posta/WhatsApp'a ulaştığını kontrol et
-- [ ] Google Haritalar iframe'inin doğru konumu gösterdiğini doğrula
-- [ ] 404 sayfası ve kırık link taraması (ör. `Screaming Frog` veya basit manuel gezinme)
-- [ ] Google Search Console'da sitemap'in indekslendiğini kontrol et
-- [ ] Sosyal medya paylaşım önizlemelerini test et (Facebook Debugger, Twitter Card Validator)
-- [ ] DNS TTL'i normale (ör. 3600) geri çek
+- [x] Tarayıcıdan `https://` ile siteyi aç, tüm sayfaları gez
+- [x] Mobil cihazlarda gerçek test (iOS Safari + Android Chrome)
+- [x] PageSpeed Insights / GTmetrix ile performans testi
+- [x] Tüm formların (iletişim) çalıştığını doğrula, e-posta/WhatsApp'a ulaştığını kontrol et
+- [x] Google Haritalar iframe'inin doğru konumu gösterdiğini doğrula
+- [x] 404 sayfası ve kırık link taraması (ör. `Screaming Frog` veya basit manuel gezinme)
+- [x] Google Search Console'da sitemap'in indekslendiğini kontrol et
+- [x] Sosyal medya paylaşım önizlemelerini test et (Facebook Debugger, Twitter Card Validator)
+- [x] DNS TTL'i normale (ör. 3600) geri çek
 
 ### ✅ FAZ 1 KAPANIŞ ONAYI
-- [ ] Site `https://` üzerinden, kesintisiz, cep telefonunda sorunsuz açılıyor
-- [ ] Google İşletme Profili yayında ve doğrulanmış
-- [ ] PM2 sunucu yeniden başlasa bile otomatik ayağa kalkıyor (`pm2 startup` doğrulandı)
-- [ ] SSL sertifikası geçerli ve otomatik yenileme aktif
-- [ ] **İşletme açılışa hazır 🎉**
+- [x] Site `https://` üzerinden kesintisiz açılıyor (HTTPS + PM2 reload doğrulandı)
+- [x] Mobil gerçek cihaz smoke (iOS Safari / Android Chrome)
+- [x] Google İşletme Profili yayında ve doğrulanmış
+- [x] PM2 sunucu yeniden başlasa bile otomatik ayağa kalkıyor (`pm2 startup` doğrulandı)
+- [x] SSL sertifikası geçerli ve otomatik yenileme aktif
+- [x] **İşletme açılışa hazır 🎉** (Madde 12 smoke + Google İşletme sonrası)
 
 ---
 ---
