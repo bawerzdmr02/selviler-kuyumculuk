@@ -52,7 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${montserrat.variable} ${caslon.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-ivory font-sans text-noir">
+      <body className="flex min-h-full max-w-full flex-col overflow-x-hidden bg-ivory font-sans text-noir">
         <JsonLd />
         <SiteShell>{children}</SiteShell>
       </body>

@@ -117,7 +117,7 @@ export function CartView() {
                   alt={item.name}
                   fill
                   sizes="112px"
-                  className="object-cover"
+                  className="h-full w-full object-cover"
                 />
               </Link>
 

@@ -12,25 +12,27 @@ const SOCIAL_IMAGES = [
 
 export function SocialFeed() {
   return (
-    <section className="bg-ivory px-4 py-20 sm:px-6 lg:px-8">
+    <section className="max-w-full overflow-x-hidden bg-ivory px-4 py-10 sm:px-6 sm:py-16 md:py-20 lg:px-8">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-10 flex flex-col items-center text-center">
-          <p className="mb-3 text-xs uppercase tracking-[0.28em] text-gold">
+        <div className="mb-6 flex flex-col items-center text-center sm:mb-10">
+          <p className="mb-2 text-[0.65rem] uppercase tracking-[0.28em] text-gold sm:mb-3 sm:text-xs">
             Sosyal
           </p>
-          <h2 className="font-serif text-3xl text-noir">Instagram&apos;da Biz</h2>
+          <h2 className="font-serif text-2xl text-noir sm:text-3xl">
+            Instagram&apos;da Biz
+          </h2>
           <a
             href={siteConfig.social.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 text-sm text-charcoal/75 transition-colors hover:text-gold"
+            className="mt-4 inline-flex items-center gap-2 text-sm text-charcoal/75 transition-colors hover:text-gold sm:mt-6"
           >
             <Camera size={16} aria-hidden className="text-gold" />
             @selvilerkuyumculuk
           </a>
         </div>
 
-        <ul className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+        <ul className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-4 md:gap-4">
           {SOCIAL_IMAGES.map((src, index) => (
             <li
               key={src}
@@ -41,7 +43,7 @@ export function SocialFeed() {
                 alt={`Altın takı görseli ${index + 1}`}
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover"
+                className="h-full w-full object-cover"
               />
             </li>
           ))}

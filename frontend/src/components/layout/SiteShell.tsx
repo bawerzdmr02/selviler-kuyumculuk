@@ -23,7 +23,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      <main className="flex-1">{children}</main>
+      <main className="w-full max-w-full flex-1 overflow-x-hidden">
+        {children}
+      </main>
       <Footer />
     </>
   );

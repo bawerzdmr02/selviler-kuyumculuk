@@ -18,18 +18,18 @@ export default function ContactPage() {
   const { contact } = siteConfig;
 
   return (
-    <div className="bg-ivory px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+    <div className="max-w-full overflow-x-hidden bg-ivory px-4 py-10 sm:px-6 sm:py-16 md:py-24 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <header className="mx-auto mb-14 max-w-2xl text-center">
-          <p className="mb-3 text-xs uppercase tracking-[0.28em] text-muted">
+        <header className="mx-auto mb-8 max-w-2xl text-center sm:mb-14">
+          <p className="mb-2 text-[0.65rem] uppercase tracking-[0.28em] text-muted sm:mb-3 sm:text-xs">
             İletişim
           </p>
-          <h1 className="font-serif text-4xl text-noir sm:text-5xl">
+          <h1 className="font-serif text-3xl text-noir sm:text-4xl md:text-5xl">
             Bize ulaşın
           </h1>
         </header>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
           <div className="space-y-8">
             <Card title="Mağaza bilgileri">
               <ul className="space-y-4 text-sm text-charcoal/80">
@@ -85,7 +85,7 @@ export default function ContactPage() {
               <iframe
                 title="Selviler Kuyumculuk konum haritası"
                 src={contact.mapEmbedUrl}
-                className="h-72 w-full"
+                className="h-56 w-full max-w-full sm:h-72"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen

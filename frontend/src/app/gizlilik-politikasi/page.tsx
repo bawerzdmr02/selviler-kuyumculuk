@@ -14,13 +14,13 @@ export function generateMetadata(): Metadata {
 
 export default function PrivacyPolicyPage() {
   return (
-    <article className="bg-ivory px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+    <article className="max-w-full overflow-x-hidden bg-ivory px-4 py-10 sm:px-6 sm:py-20 md:py-28 lg:px-8">
       <div className="mx-auto max-w-3xl">
-        <header className="mb-12 text-center">
-          <p className="mb-3 text-xs uppercase tracking-[0.28em] text-gold">
+        <header className="mb-8 text-center sm:mb-12">
+          <p className="mb-2 text-[0.65rem] uppercase tracking-[0.28em] text-gold sm:mb-3 sm:text-xs">
             Yasal
           </p>
-          <h1 className="font-serif text-4xl text-noir sm:text-5xl">
+          <h1 className="font-serif text-3xl text-noir sm:text-4xl md:text-5xl">
             Gizlilik Politikası
           </h1>
           <div className="mx-auto mt-6 max-w-xs">

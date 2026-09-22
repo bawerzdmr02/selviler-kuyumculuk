@@ -19,21 +19,21 @@ export function CategoryProductCard({
     <article className="group flex h-full flex-col bg-white">
       <Link
         href={`/urun/${product.slug}`}
-        className="relative block aspect-[3/4] overflow-hidden bg-[#F5F5F3]"
+        className="relative block aspect-[3/4] max-h-[46vh] overflow-hidden bg-[#F5F5F3] md:max-h-none"
       >
         <Image
           src={product.image}
           alt={product.name}
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          className="object-cover transition-opacity duration-500 group-hover:opacity-0"
+          className="h-full w-full object-cover transition-opacity duration-500 group-hover:opacity-0"
         />
         <Image
           src={hoverSrc}
           alt=""
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          className="object-cover opacity-0 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100"
+          className="h-full w-full object-cover opacity-0 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100"
           aria-hidden
         />
         {product.featured && (

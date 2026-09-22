@@ -30,7 +30,7 @@ export function Header() {
           onClick={closeMenu}
           className="shrink-0 leading-none transition-opacity hover:opacity-80"
         >
-          <span className="block font-serif text-2xl tracking-[0.08em] text-noir sm:text-[1.75rem]">
+          <span className="block font-serif text-xl tracking-[0.08em] text-noir sm:text-2xl md:text-[1.75rem]">
             SELVİLER
           </span>
           <span className="mt-0.5 block font-sans text-[0.65rem] uppercase tracking-[0.35em] text-muted">

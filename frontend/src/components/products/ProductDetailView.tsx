@@ -57,8 +57,8 @@ export function ProductDetailView({
   )}`;
 
   return (
-    <div className="bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-10 lg:px-8">
+    <div className="max-w-full overflow-x-hidden bg-background">
+      <div className="mx-auto max-w-6xl px-4 py-5 sm:px-6 sm:py-10 lg:px-8">
         <nav
           aria-label="Sayfa yolu"
           className="mb-6 flex flex-wrap items-center gap-1.5 text-[13px] text-charcoal/70 sm:mb-8"
@@ -75,14 +75,14 @@ export function ProductDetailView({
         <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:gap-x-12 lg:gap-y-10">
           {/* Galeri */}
           <div>
-            <div className="relative aspect-[4/5] overflow-hidden bg-white sm:aspect-[3/4] lg:aspect-[4/5] lg:max-w-[420px]">
+            <div className="relative mx-auto aspect-[4/5] max-h-[50vh] w-full overflow-hidden bg-white sm:aspect-[3/4] sm:max-h-[60vh] md:max-h-none lg:aspect-[4/5] lg:max-w-[420px]">
               <Image
                 src={gallery[activeImage] ?? product.image}
                 alt={product.name}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 420px"
-                className="object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
 
@@ -107,7 +107,7 @@ export function ProductDetailView({
                       alt=""
                       fill
                       sizes="64px"
-                      className="object-cover"
+                      className="h-full w-full object-cover"
                     />
                   </button>
                 ))}
@@ -303,7 +303,7 @@ export function ProductDetailView({
                         alt={item.name}
                         fill
                         sizes="(max-width: 1024px) 50vw, 25vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     </div>
                     <p className="mt-3 text-center font-serif text-sm font-normal text-noir group-hover:text-gold sm:text-base">

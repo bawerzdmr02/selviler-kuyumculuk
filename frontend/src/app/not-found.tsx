@@ -3,11 +3,11 @@ import { siteConfig } from "@/lib/site";
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-[70vh] flex-col items-center justify-center bg-ivory px-4 py-24 text-center">
-      <p className="font-serif text-7xl tracking-[0.12em] text-muted sm:text-8xl">
+    <div className="flex min-h-[60vh] max-w-full flex-col items-center justify-center overflow-x-hidden bg-ivory px-4 py-16 text-center sm:min-h-[70vh] sm:py-24">
+      <p className="font-serif text-5xl tracking-[0.12em] text-muted sm:text-7xl md:text-8xl">
         404
       </p>
-      <h1 className="mt-6 font-serif text-2xl text-noir sm:text-3xl">
+      <h1 className="mt-4 font-serif text-xl text-noir sm:mt-6 sm:text-2xl md:text-3xl">
         Sayfa bulunamadı
       </h1>
       <p className="mt-4 max-w-md text-sm leading-relaxed text-charcoal/65">

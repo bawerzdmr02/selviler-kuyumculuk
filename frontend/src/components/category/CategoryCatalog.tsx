@@ -249,18 +249,18 @@ export function CategoryCatalog({
   };
 
   return (
-    <div className="bg-[#FAFAFA] px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+    <div className="max-w-full overflow-x-hidden bg-[#FAFAFA] px-4 py-8 sm:px-6 sm:py-14 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <header className="mb-8 border-b border-gold/25 pb-6 sm:mb-10">
-          <p className="mb-2 text-xs uppercase tracking-[0.28em] text-gold">
+        <header className="mb-6 border-b border-gold/25 pb-5 sm:mb-10 sm:pb-6">
+          <p className="mb-2 text-[0.65rem] uppercase tracking-[0.28em] text-gold sm:text-xs">
             Koleksiyon
           </p>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <h1 className="font-serif text-3xl text-noir sm:text-4xl">
+          <div className="flex flex-wrap items-end justify-between gap-3 sm:gap-4">
+            <div className="min-w-0">
+              <h1 className="font-serif text-2xl text-noir sm:text-3xl md:text-4xl">
                 {category.name}
               </h1>
-              <p className="mt-2 max-w-xl text-sm text-charcoal/65">
+              <p className="mt-1.5 max-w-xl text-xs text-charcoal/65 sm:mt-2 sm:text-sm">
                 {category.description}
               </p>
             </div>
@@ -333,9 +333,9 @@ export function CategoryCatalog({
                 </button>
               </div>
             ) : (
-              <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-5">
+              <ul className="grid grid-cols-2 gap-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 lg:gap-5">
                 {filtered.map((product) => (
-                  <li key={product.id}>
+                  <li key={product.id} className="min-w-0">
                     <CategoryProductCard
                       product={product}
                       categorySlug={category.slug}

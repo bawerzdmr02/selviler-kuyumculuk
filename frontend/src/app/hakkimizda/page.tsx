@@ -29,36 +29,38 @@ const GALLERY = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-ivory">
-      <section className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-8">
-        <p className="mb-3 text-xs uppercase tracking-[0.28em] text-muted">
+    <div className="max-w-full overflow-x-hidden bg-ivory">
+      <section className="mx-auto max-w-3xl px-4 py-10 text-center sm:px-6 sm:py-16 md:py-24 lg:px-8">
+        <p className="mb-2 text-[0.65rem] uppercase tracking-[0.28em] text-muted sm:mb-3 sm:text-xs">
           Hakkımızda
         </p>
-        <h1 className="font-serif text-4xl text-noir sm:text-5xl">
+        <h1 className="font-serif text-3xl text-noir sm:text-4xl md:text-5xl">
           Marka hikayemiz
         </h1>
-        <p className="mt-8 text-sm leading-relaxed text-charcoal/75 sm:text-base">
+        <p className="mt-5 text-sm leading-relaxed text-charcoal/75 sm:mt-8 sm:text-base">
           Selviler Kuyumculuk olarak yalnızca saf altına odaklanıyoruz. Bilezik,
           küpe, kolye ve zincir — değerini kaybetmeyen, ustalıkla işlenmiş altın
           koleksiyonları sunuyoruz.
         </p>
       </section>
 
-      <section className="border-y border-border bg-cream px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:gap-16">
+      <section className="border-y border-border bg-cream px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 md:gap-16">
           <div>
-            <h2 className="font-serif text-2xl text-noir sm:text-3xl">
+            <h2 className="font-serif text-xl text-noir sm:text-2xl md:text-3xl">
               Ustalık
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-charcoal/70 sm:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-charcoal/70 sm:mt-4 sm:text-base">
               Atölyemizde geleneksel kuyumculuk teknikleri, çağdaş tasarım dili
               ile buluşur. Her parça, seçilmiş hammaddeler ve titiz kontrol
               süreçleriyle tamamlanır.
             </p>
           </div>
           <div>
-            <h2 className="font-serif text-2xl text-noir sm:text-3xl">Güven</h2>
-            <p className="mt-4 text-sm leading-relaxed text-charcoal/70 sm:text-base">
+            <h2 className="font-serif text-xl text-noir sm:text-2xl md:text-3xl">
+              Güven
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-charcoal/70 sm:mt-4 sm:text-base">
               Şeffaf iletişim, doğru ayar bilgisi ve satış sonrası destek —
               Selviler deneyiminin temelidir. Müşterilerimizle kurduğumuz ilişki
               tek bir satıştan fazlasıdır.
@@ -67,27 +69,27 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="mb-10 text-center font-serif text-3xl text-noir">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
+        <h2 className="mb-6 text-center font-serif text-2xl text-noir sm:mb-10 sm:text-3xl">
           Mağazamızdan kareler
         </h2>
-        <ul className="grid gap-4 sm:grid-cols-3">
+        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
           {GALLERY.map((item) => (
             <li
               key={item.src}
-              className="relative aspect-[4/5] overflow-hidden border border-border bg-surface shadow-card"
+              className="relative aspect-[4/5] max-h-[42vh] overflow-hidden border border-border bg-surface shadow-card md:max-h-none"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
-                sizes="(max-width: 640px) 100vw, 33vw"
-                className="object-cover"
+                sizes="(max-width: 640px) 50vw, 33vw"
+                className="h-full w-full object-cover"
               />
             </li>
           ))}
         </ul>
-        <div className="mt-12 flex justify-center">
+        <div className="mt-8 flex justify-center sm:mt-12">
           <ButtonLink href="/iletisim" variant="outline">
             Bizi ziyaret edin
           </ButtonLink>

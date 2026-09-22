@@ -77,7 +77,7 @@ function FlashPrice({
 function PriceSkeleton() {
   return (
     <div
-      className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+      className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4"
       aria-busy="true"
       aria-label="Fiyatlar yükleniyor"
     >
@@ -168,11 +168,11 @@ export function LiveGoldPrices() {
   }, []);
 
   return (
-    <section className="border-y border-gold/20 bg-cream px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section className="max-w-full overflow-x-hidden border-y border-gold/20 bg-cream px-4 py-10 sm:px-6 sm:py-16 md:py-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <Reveal className="mb-10 text-center sm:mb-12">
-          <div className="mb-3 flex items-center justify-center gap-3">
-            <p className="text-xs uppercase tracking-[0.28em] text-gold">
+        <Reveal className="mb-6 text-center sm:mb-10 md:mb-12">
+          <div className="mb-2 flex items-center justify-center gap-3 sm:mb-3">
+            <p className="text-[0.65rem] uppercase tracking-[0.28em] text-gold sm:text-xs">
               Kapalıçarşı
             </p>
             <span className="inline-flex items-center gap-1.5">
@@ -185,10 +185,10 @@ export function LiveGoldPrices() {
               </span>
             </span>
           </div>
-          <h2 className="font-serif text-2xl text-noir sm:text-3xl md:text-4xl">
+          <h2 className="font-serif text-xl text-noir sm:text-2xl md:text-3xl lg:text-4xl">
             Canlı Piyasa Fiyatları
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-charcoal/70 sm:text-base">
+          <p className="mx-auto mt-3 max-w-2xl text-xs leading-relaxed text-charcoal/70 sm:mt-4 sm:text-sm md:text-base">
             Harem Altın Kapalıçarşı kurları — gram, çeyrek, yarım ve tam.
             Fiyatlar arka planda anlık güncellenir.
           </p>
@@ -197,20 +197,20 @@ export function LiveGoldPrices() {
         {!quotes ? (
           <PriceSkeleton />
         ) : (
-          <RevealStagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <RevealStagger className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
             {quotes.map((quote) => {
               const up = quote.change >= 0;
 
               return (
                 <RevealItem key={quote.id}>
-                  <article className="group relative h-full border border-gold/35 bg-surface p-5 shadow-card transition-all duration-500 hover:border-gold hover:shadow-card-hover sm:p-6">
+                  <article className="group relative h-full border border-gold/35 bg-surface p-4 shadow-card transition-all duration-500 hover:border-gold hover:shadow-card-hover sm:p-6">
                     <span
                       aria-hidden
                       className="pointer-events-none absolute inset-2 border border-gold/15"
                     />
-                    <div className="relative z-10 space-y-4">
+                    <div className="relative z-10 space-y-3 sm:space-y-4">
                       <div className="flex items-start justify-between gap-3">
-                        <h3 className="font-serif text-lg text-noir sm:text-xl">
+                        <h3 className="font-serif text-base text-noir sm:text-lg md:text-xl">
                           {quote.label}
                         </h3>
                         <span

@@ -23,8 +23,8 @@ const TRUST_ITEMS = [
 
 export function TrustBadges() {
   return (
-    <section className="bg-surface px-4 py-12 sm:px-6 lg:px-8">
-      <RevealStagger className="mx-auto grid max-w-7xl gap-8 sm:grid-cols-3">
+    <section className="max-w-full overflow-x-hidden bg-surface px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <RevealStagger className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-3 sm:gap-8">
         {TRUST_ITEMS.map((item) => (
           <RevealItem key={item.title}>
             <div className="flex flex-col items-center text-center sm:items-start sm:text-left">

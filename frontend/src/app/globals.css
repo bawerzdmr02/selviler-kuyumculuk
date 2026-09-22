@@ -32,10 +32,20 @@
   --font-serif: var(--font-caslon);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-montserrat), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Non-fill images; Next/Image fill uses inline absolute sizing */
+img {
+  max-width: 100%;
 }
 
 h1,

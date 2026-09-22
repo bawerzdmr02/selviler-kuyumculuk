@@ -39,36 +39,36 @@ const CATEGORY_TILES = [
 
 export function CategoryShop() {
   return (
-    <section className="bg-ivory px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section className="max-w-full overflow-x-hidden bg-ivory px-4 py-10 sm:px-6 sm:py-16 md:py-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <Reveal className="mb-10 text-center sm:mb-12">
-          <p className="mb-3 text-xs uppercase tracking-[0.28em] text-gold">
+        <Reveal className="mb-6 text-center sm:mb-10 md:mb-12">
+          <p className="mb-2 text-[0.65rem] uppercase tracking-[0.28em] text-gold sm:mb-3 sm:text-xs">
             Saf altın
           </p>
-          <h2 className="font-serif text-2xl uppercase tracking-[0.08em] text-noir sm:text-3xl">
+          <h2 className="font-serif text-xl uppercase tracking-[0.08em] text-noir sm:text-2xl md:text-3xl">
             Kategorilere göre alışverişe başla
           </h2>
         </Reveal>
 
-        <RevealStagger className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
+        <RevealStagger className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-5 lg:gap-4">
           {CATEGORY_TILES.map((tile) => (
             <RevealItem key={tile.href}>
               <Link
                 href={tile.href}
-                className="group relative block aspect-[3/4] overflow-hidden border border-transparent bg-cream transition-colors duration-300 hover:border-gold/50"
+                className="group relative block aspect-[3/4] max-h-[42vh] overflow-hidden border border-transparent bg-cream transition-colors duration-300 hover:border-gold/50 md:max-h-none"
               >
                 <Image
                   src={tile.image}
                   alt={tile.label}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div
                   aria-hidden
                   className="absolute inset-0 bg-gradient-to-t from-noir/60 via-transparent to-transparent opacity-85 transition-opacity duration-500 group-hover:opacity-95"
                 />
-                <span className="absolute inset-x-0 bottom-0 p-5 text-center font-sans text-xs uppercase tracking-[0.18em] text-gold-light sm:text-sm">
+                <span className="absolute inset-x-0 bottom-0 p-3 text-center font-sans text-[0.65rem] uppercase tracking-[0.18em] text-gold-light sm:p-5 sm:text-xs md:text-sm">
                   {tile.label}
                 </span>
               </Link>

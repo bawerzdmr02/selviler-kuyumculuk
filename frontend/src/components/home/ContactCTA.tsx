@@ -7,16 +7,18 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 
 export function ContactCTA() {
   return (
-    <section className="bg-ivory px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section className="max-w-full overflow-x-hidden bg-ivory px-4 py-10 sm:px-6 sm:py-16 md:py-20 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="mx-auto flex max-w-3xl flex-col items-center border border-border bg-surface px-6 py-12 text-center shadow-card sm:px-10"
+        className="mx-auto flex max-w-3xl flex-col items-center border border-border bg-surface px-4 py-8 text-center shadow-card sm:px-10 sm:py-12"
       >
-        <p className="text-xs uppercase tracking-[0.28em] text-muted">İletişim</p>
-        <h2 className="mt-3 font-serif text-2xl text-noir sm:text-3xl">
+        <p className="text-[0.65rem] uppercase tracking-[0.28em] text-muted sm:text-xs">
+          İletişim
+        </p>
+        <h2 className="mt-2 font-serif text-xl text-noir sm:mt-3 sm:text-2xl md:text-3xl">
           Mağazamızı ziyaret edin
         </h2>
         <p className="mt-4 max-w-lg text-sm leading-relaxed text-charcoal/70">
