@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle, Mail } from "lucide-react";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Card } from "@/components/ui/Card";
 import { siteConfig } from "@/lib/site";
@@ -49,6 +49,18 @@ export default function ContactPage() {
                   >
                     <Phone size={14} aria-hidden className="text-gold" />
                     {contact.phone}
+                  </a>
+                </li>
+                <li>
+                  <p className="text-xs uppercase tracking-[0.18em] text-muted">
+                    E-posta
+                  </p>
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="mt-1 inline-flex items-center gap-2 text-noir transition-colors hover:text-gold"
+                  >
+                    <Mail size={14} aria-hidden className="text-gold" />
+                    {contact.email}
                   </a>
                 </li>
                 <li>

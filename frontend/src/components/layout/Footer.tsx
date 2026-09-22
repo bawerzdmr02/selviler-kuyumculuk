@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Camera, MessageCircle, Phone, ShieldCheck, Lock, CreditCard } from "lucide-react";
+import { Camera, Mail, MessageCircle, Phone, ShieldCheck, Lock, CreditCard } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 
 export function Footer() {
@@ -78,6 +78,15 @@ export function Footer() {
                 >
                   <Phone size={14} aria-hidden className="text-gold" />
                   {siteConfig.contact.phone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${siteConfig.contact.email}`}
+                  className="inline-flex items-center gap-2 transition-colors hover:text-gold"
+                >
+                  <Mail size={14} aria-hidden className="text-gold" />
+                  {siteConfig.contact.email}
                 </a>
               </li>
               <li>

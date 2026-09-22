@@ -32,6 +32,12 @@ export function ContactCTA() {
         >
           {siteConfig.contact.phone}
         </a>
+        <a
+          href={`mailto:${siteConfig.contact.email}`}
+          className="mt-1 text-sm text-gold transition-colors hover:text-noir"
+        >
+          {siteConfig.contact.email}
+        </a>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <ButtonLink href="/iletisim">İletişime Geç</ButtonLink>
           <a
