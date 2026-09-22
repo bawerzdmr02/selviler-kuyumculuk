@@ -59,7 +59,18 @@ h6 {
   font-weight: 600;
 }
 
-/* Smart TV OLED burn-in koruması — ~5 dk’da bir hafif kayma */
+/* Screen-reader only — SEO H1 / a11y */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 @keyframes oled-float {
   0%,
   100% {

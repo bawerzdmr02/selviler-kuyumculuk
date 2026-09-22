@@ -22,11 +22,12 @@ export function createPageMetadata({
   noIndex = false,
 }: PageSeoInput): Metadata {
   const url = absoluteUrl(path);
-  const fullTitle =
-    path === "/" ? `${siteConfig.name} · ${siteConfig.tagline}` : title;
+  const isHome = path === "/";
+  const pageTitle = isHome ? siteConfig.seoTitle : title;
+  const ogTitle = isHome ? siteConfig.seoTitle : `${title} · ${siteConfig.name}`;
 
   return {
-    title: path === "/" ? { absolute: fullTitle } : title,
+    title: isHome ? { absolute: pageTitle } : title,
     description,
     alternates: {
       canonical: url,
@@ -36,7 +37,7 @@ export function createPageMetadata({
       locale: siteConfig.locale,
       url,
       siteName: siteConfig.name,
-      title: fullTitle,
+      title: ogTitle,
       description,
       images: [
         {
@@ -49,7 +50,7 @@ export function createPageMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: fullTitle,
+      title: ogTitle,
       description,
       images: [image],
     },

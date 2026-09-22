@@ -34,9 +34,9 @@ export function Hero() {
           <p className="font-sans text-[0.65rem] uppercase tracking-[0.35em] text-gold sm:text-xs">
             {siteConfig.name} · Saf Altın
           </p>
-          <h1 className="font-serif text-2xl leading-tight text-noir sm:text-3xl md:text-5xl lg:text-[3.25rem]">
+          <h2 className="font-serif text-2xl leading-tight text-noir sm:text-3xl md:text-5xl lg:text-[3.25rem]">
             Değerini hiç kaybetmeyen altın koleksiyonları
-          </h1>
+          </h2>
           <p className="max-w-md text-xs leading-relaxed text-charcoal/80 sm:text-sm md:text-base">
             Yatırımlık ve şık altın takılar. Ustalıkla işlenmiş saf altın —
             yalnızca altın, başka hiçbir şey.

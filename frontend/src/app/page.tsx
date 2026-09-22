@@ -6,6 +6,7 @@ import { ProductShowcase } from "@/components/home/ProductShowcase";
 import { BrandStoryTeaser } from "@/components/home/BrandStoryTeaser";
 import { TrustBadges } from "@/components/home/TrustBadges";
 import { ContactCTA } from "@/components/home/ContactCTA";
+import { HomeJsonLd } from "@/components/seo/JsonLd";
 import {
   getProductsByCategory,
   getShowcaseByCategory,
@@ -15,7 +16,7 @@ import { siteConfig } from "@/lib/site";
 
 export function generateMetadata(): Metadata {
   return createPageMetadata({
-    title: siteConfig.name,
+    title: siteConfig.seoTitle,
     description: siteConfig.description,
     path: "/",
   });
@@ -31,6 +32,9 @@ export default function HomePage() {
 
   return (
     <>
+      <HomeJsonLd />
+      {/* SiteShell zaten <main> sarıyor — iç içe main yok */}
+      <h1 className="sr-only">Selviler Kuyumculuk</h1>
       <Hero />
       <LiveGoldPrices />
       <CategoryShop />

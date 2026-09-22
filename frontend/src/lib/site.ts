@@ -1,8 +1,10 @@
 export const siteConfig = {
   name: "Selviler Kuyumculuk",
-  tagline: "Değerini hiç kaybetmeyen altın koleksiyonları",
+  tagline: "Güvenilir Altın ve Mücevherat",
+  /** Ana sayfa / varsayılan SEO title */
+  seoTitle: "Selviler Kuyumculuk | Güvenilir Altın ve Mücevherat",
   description:
-    "Yatırımlık ve şık altın takılar — ustalıkla işlenmiş saf altın.",
+    "Selviler Kuyumculuk'ta güncel canlı altın fiyatları, şık pırlanta ve altın takı tasarımları. 14, 22 ve 24 ayar altın çeşitlerinde güvenilir alışverişin adresi.",
   /** Canlı domain — production'da NEXT_PUBLIC_SITE_URL ile override edilir */
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
@@ -11,6 +13,7 @@ export const siteConfig = {
     "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80",
   locale: "tr_TR",
   contact: {
+    // TODO: Google Business / gerçek mağaza bilgileriyle güncelle
     address:
       "Uğur Mumcu Mah. Muhsin Yazıcıoğlu Cad. No:11/A SULTANGAZİ/İSTANBUL",
     streetAddress: "Uğur Mumcu Mah. Muhsin Yazıcıoğlu Cad. No:11/A",

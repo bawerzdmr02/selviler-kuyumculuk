@@ -1,11 +1,11 @@
-import { getJewelryStoreJsonLd } from "@/lib/jsonld";
+import { getHomeJsonLdGraph } from "@/lib/jsonld";
 
 /**
- * schema.org JewelryStore / LocalBusiness — site genelinde geçerli.
- * Adres ve koordinatlar siteConfig'te taslak; canlıya alınca güncellenecek.
+ * Ana sayfa JewelryStore / LocalBusiness + WebSite JSON-LD.
+ * Adres ve koordinatlar siteConfig'te; canlıya alınca gerçekleriyle güncelle.
  */
-export function JsonLd() {
-  const data = getJewelryStoreJsonLd();
+export function HomeJsonLd() {
+  const data = getHomeJsonLdGraph();
 
   return (
     <script
